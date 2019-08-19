@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>JSON Example</title>
+</head>
+<body>
+    <h1>json Example</h1><br> 
+    <form>
+            Name : <input type="text" id="name" placeholder="Enter Name"><br>
+Roll Number : <input type="number" id="rollno" placeholder="Enter RollNumber"><br>
+Standard : <input type="text" id="standard" placeholder="Enter Standard"><br>
+Your Marks : <input type="number" id="mark" placeholder="Enter Your Mark"><br>
+Total Marks : <input type="number" id="totalmark" placeholder="Enter Total Mark"><br>
+<button id="check" type="button">Convert the details to JSON</button>
+    </form>
+<script>
+    
+    // Student object constructor
+    function Student(name, roll, result) {
+      this.name = name;
+      this.roll = roll;
+      this.result = result; 
+    }
+    
+    document.getElementById("check").addEventListener("click",fun1);
+    function fun1(){
+        var name = document.getElementById("name").value;
+        var rollno = document.getElementById("rollno").value;
+        var standard = document.getElementById("standard").value;
+        var mark = document.getElementById("mark").value;
+        var totalmark = document.getElementById("totalmark").value;
+
+        var res = (mark/totalmark)*100;
+        var result = "";
+
+        if(res>30){
+            result = "Pass";
+        } 
+        else{
+            result = "Fail";
+        }
+        console.log("Result "+name+" "+rollno+" "+mark+" "+res);
+        var std = new Student(name,rollno,res);
+        var str = JSON.stringify(std);
+        console.log(str);
+    }
+    </script> 
+    </body>
+</html>

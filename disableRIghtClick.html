@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Click</title>
+    </head>
+    <body>  
+         <h1>Disable RIght Click</h1> 
+         <script>
+          window.addEventListener("contextmenu",fun1);
+          function fun1(event){
+            event.preventDefault();
+            alert("Right Click Is not allowed");
+        }
+         </script>
+    </body>
+</html>

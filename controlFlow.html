@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Control flow</title>
+</head>
+<body>
+    <h1>Control flow example</h1><br>
+    <h2>Use of If else</h2>
+    <form>
+AGE : <input type="number" id="age" placeholder="Enter Age"><br>
+<button id="check" type="button">Check For Voting</button>
+    </form>
+<script>
+    
+    
+    document.getElementById("check").addEventListener("click",fun1);
+    function fun1(){
+        var age = document.getElementById("age").value;
+        if(age>=18){
+            console.log("Eligible for Vote");
+            alert("Eligible")
+        }
+        else if(age<10){
+            console.log("CHILD, not eligible");  
+            alert("CHILD, not elegible")
+        }
+        else{
+            console.log("Not ELigible");  
+            alert("Not ELigible")
+        }
+    }
+    
+    </script>
+    <hr><br>
+     <h2>Use of Switch</h2>
+     <form>
+            Mark in % : <input type="number" id="mark" placeholder="Enter Mark in percentage"><br>
+            <button id="division" type="button">Check Division</button>
+                </form>
+            <script>
+                
+                
+                document.getElementById("division").addEventListener("click",fun1);
+                function fun1(){
+                    var mark = document.getElementById("mark").value;
+                     switch(mark){
+                         case 80 :
+                             alert("Out Standing");
+                             break;
+                             case 70 :
+                             alert("Excelent");
+                             break;
+                             case 60 :
+                             alert("Average");
+                             break;
+                             case 50 :
+                             alert("Below Average");
+                             break;
+                             case 40 :
+                             alert("Last Grade");
+                             break;
+                            
+                     }
+                }
+                var num = 10;
+                while(num>0){
+                    console.log("While loop value is "+num);
+                    num--;
+                }
+
+                for(var i= 0;i<3;i++){
+                    console.log("For loop value is "+i);
+                }
+
+                </script>
+    </body>
+</html>
