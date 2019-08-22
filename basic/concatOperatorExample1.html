@@ -1,0 +1,70 @@
+<html>
+
+<head>
+
+    <title> Concat Operator </title>
+
+    <style>
+        
+        .button1 {
+          background-color:black; 
+          color: #ffffff; 
+          border: 2px solid rgb(131, 199, 133);
+        }
+
+        .button2 {
+          background-color: black; 
+          color:wheat; 
+          border: 2px solid rgb(190, 192, 70);
+        } 
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1><b> <u>CONCAT OPERATOR EXAMPLE</u></b> </h1>
+<form onsubmit="return false;">
+    <table width="100%" height="100%" bgcolor="D3D3D3" align="center">
+
+        <tr>
+                <td>Enter Number First Name :</td>
+            <td> <input id="fname" placeholder="Enter First Name"> </td>
+        </tr>
+
+        <tr>
+                <td>Enter Last Name :</td>
+            <td> <input id="lname" placeholder="Enter Last Name"> </td>
+        </tr>
+
+        <tr>
+
+            <td><button class="button button1" onclick=" concat()"> ConCat</button></td> 
+        </tr>
+
+        <tr>
+                <td><p id="p1">Result will be shown Here</p></td>
+            </tr> 
+
+     </table>
+    </form>
+     <script  language="javascript">
+ 
+
+     function concat(){
+
+        var fname = document.getElementById('fname').value;
+var lname = document.getElementById('lname').value; 
+
+var fullName = fname+" "+lname
+ 
+document.getElementById("p1").innerHTML = "Full anem is "+fullName;
+ 
+     }
+
+     </script>
+
+</body>
+
+</html>
