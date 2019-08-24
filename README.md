@@ -32,5 +32,43 @@ the inputs, interacting with server, validations etc.
 console.log() is used to print message/log in the browser console.  
 console.log("Message type here")  
   
-    
+### OPERATORS In JAVASCRIPT   
+* Arithmatic Operator **( + , - , * , / , % )**  
+* Assignment Operator **( = , += , -= , *= , /= , %= )**  
+* Increment Decrement Operator **( ++ , -- )** 
+* Logical Operator **( && , || , ! )**  
+* Concat Operator **( + )**  
+
+***ALL THE OPERATOR EXAMPLES ARE WRITTEN IN OPERATOR PACKAGE IN SOURCE CODE***  
+
+### CONTROL STATEMENT  
+* **IF ELSE**  
+* **SWITCH STATEMENT**  
+* **WHILE LOOP**  
+* **DO WHILE LOOP**  
+* **FOR LOOP**   
+  
+#### IF ELSE  
+Its same as other programming language like java, python etc.  
+type of If  
+1. If  
+2. if else    
+3. else if  
+
+
+           ```
+            var name = document.getElementById('name').value;  
+            var ageStr = document.getElementById('age').value;
+            var age = parseInt(ageStr);
+
+            if(age<=20){
+                document.getElementById("details").innerHTML = name+" Have ENERGY AND TIME BUT NO MONEY";
+            }
+            else if(age>20 || age<40){
+                document.getElementById("details").innerHTML = name+" Have ENERGY AND MONEY BUT NO TIME";
+            }
+            else{
+                document.getElementById("details").innerHTML = name+" Have MONEY AND TIME BUT NO ENERGY";
+            }```
+
 
