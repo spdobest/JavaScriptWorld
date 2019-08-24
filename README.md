@@ -70,5 +70,148 @@ type of If
             else{
                 document.getElementById("details").innerHTML = name+" Have MONEY AND TIME BUT NO ENERGY";
             }```
+#### SWITCH CASE  
+its take one value as input and check if it matches with other values in the case inside the switch statement  
+  
+  
+    ```
+    <script language="javascript">
+        function getDetails(){
+            var name = document.getElementById('name').value;
+            var standard = document.getElementById('standard').value;
+
+            var sub1 = parseInt(document.getElementById('sub1').value);
+            var sub2 = parseInt(document.getElementById('sub2').value);
+            var sub3 = parseInt(document.getElementById('sub3').value);
+            var sub4 = parseInt(document.getElementById('sub4').value);
+
+            var percentage = sub1+sub2+sub3+sub4;
+
+            document.getElementById("pName").innerHTML = "Name : "+name
+    document.getElementById("pStandard").innerHTML = "Name : "+standard
+
+            switch (true) {
+    case (total >= 90):
+    
+    document.getElementById("grade").innerHTML = "GRADE  : OUTSTANDING"
+        break;
+    case (total >= 80): 
+    document.getElementById("grade").innerHTML = "GRADE  : EXCELENT"
+        break;
+    case (total >= 70):
+    document.getElementById("grade").innerHTML = "GRADE  : AVERAGE"
+        break;
+        case (total >= 60):
+    document.getElementById("grade").innerHTML = "GRADE  : BELOW AVERAGE"
+        break;
+        default :
+        document.getElementById("grade").innerHTML = "GRADE  : PASS"
+            }
+        }
+    </script>```  
+
+#### WHILE LOOP  
+In while loop it first check the condition then execute the code inside the while loop.  
+    
+    
+    ```
+         <script language="javascript">
+        function getDetails(){
+            var num = document.getElementById('factorial').value; 
+            var result = 1;
+            while(num>=1){
+                result*=num;
+                num--;
+            }
+            document.getElementById('txtFact').innerHTML = "Factorial of the Above Number is "+result;
+        }
+    </script>```
+       
+   
+#### DO WHILE LOOP  
+Its do same as while loop but , first it execute the code and then check the condition  
 
 
+    ```
+
+    <script language="javascript">
+        function getDetails(){
+            var num = document.getElementById('factorial').value; 
+            var result = 1;
+            while(num>=1){
+                result*=num;
+                num--;
+            }
+            document.getElementById('txtFact').innerHTML = "Factorial of the Above Number is "+result;
+        }
+    </script>```  
+ 
+####  FOR LOOP  
+->For Loop mostly same as while loop.  
+->The difference is, while loop have initialization, condition, and increment and decrement in different places. But in for loop initialization, condition check and increment decrement in one line  
+  
+  
+    ```
+    <script language="javascript">
+        function getDetails(){
+            var num = document.getElementById('factorial').value; 
+
+            var result = 1;
+            for(var i = 1;i<=num;i++){
+                result*=i; 
+            } 
+            document.getElementById('txtFact').innerHTML = "Factorial of the Above Number is "+result;
+        }
+    </script>```
+
+### FUNCTION  
+* Function is a reusable block in the program which is a set of statements with a name  
+* A larger program can be devided into too many parts, all individual parts is known as functions  
+* Functions are reusable that means we can call a function any number time and anywhere in the program.  
+      
+      ```
+      <script language="javascript">
+        function printMyName(name){
+            conole.log('My name is '+name);
+        }
+        function printMyCountry(){
+           document.getElementById('txtFact').innerHTML = "My Country Name is INDIA";
+        }
+        function printMyCity(){
+           document.getElementById('txtFact').innerHTML = "My City  Name is BHUBANESWAR";
+        }
+      </script>```
+
+#### Recursion  
+It is a techniques to call the function itself in  loop  
+
+    ```
+        <script language="javascript"> 
+        function factorial(num){ 
+            if(num == 0)
+            return 1;
+            else{ 
+                return num*factorial(num-1);
+            }
+        } 
+        document.getElementById('txtFact').innerHTML = "Factorial of the Above Number is "+factorial(5);
+    </script>```
+
+#### ARRAY Example  
+* Array is a collection of multiple values  
+* The number of element present in the array is known as Size of the Array  
+* We can retrieve the values from the array using the index of the array which is starts with 0 and ends at size-1  
+* For example you can store the list of friends in an array  
+* In javascript there is no rule to maintain "SAME TYPE " value in an array.You can store any type of values in array. You can differ the values 
+
+Create an array : var arrayName = ["Siba",123,123.23];    
+set the values : arrayName[0] = 6;  
+Get the values : arrayName[1];  
+Add the new element to the Array : arrayName.push(111);  
+Removing the existing Element : arrayName.splice(index, No. of element to remove);  
+
+    
+    
+    
+    
+    
