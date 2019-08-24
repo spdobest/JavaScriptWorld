@@ -210,6 +210,68 @@ Get the values : arrayName[1];
 Add the new element to the Array : arrayName.push(111);  
 Removing the existing Element : arrayName.splice(index, No. of element to remove);  
 
+### Object Oriented Programming in javascript  
+* In this Object oriented programming, everything considered as Object.  
+* Object represent as a Object/ real time object in real world.  
+* Object is a collection of 2 types of parameters 
+**1. Properties/ Fields -** Details about the object which is stored  variables inside object.  
+**2. Methods** Manupalation on the variables. Each object have functionality. Like, Dog have some Function like barking.  
+Example  
+Lets Consider Car as an Object  
+It have properties like  
+1. Name Of the Car  
+2. Model Number.  
+3. Company Name  
+4. Model Number  
+
+It also have some Methods  
+1. Start()  
+2. Stop()  
+3. ChangeGear()  
+  
+There are 2 types of Object oriented Programming   
+1. Class Based Object oriented Programming  
+2. Prototype Based Programming  
+  
+We can create Object by 2 methods  
+1. Object Literals - You cn see the Example In objectOriented package  
+2. Constructor Based - You cn see the Example In objectOriented package  
+
+#### Object Literals  
+    ```
+    
+    var stu = {studentId:12,StudentName:"Siba",TotalMark:80};  
+    console.log(stu);  
+    console.log("Name of Student is "+stu.StudentName)```
+    
+#### Object Creation Using Constructor  
+Its old concept. Now in ECMASCRIPT , we use class to create object   
+
+    ```
+      function Student(a,b,c){
+        this.studentId = a;
+        this.studentName = b;
+        this.studentMark = c;
+        this.result = function(){
+            if(this.studentMark>40){
+                return "Pass";
+            }
+            else{
+                return "Fail";
+            }
+        };
+    } 
+
+    var student1 = new Student(12,"Sibaprasad",99);
+
+    console.log("Name of the Student is "+student1.studentName);
+    console.log("ID of the Student is "+student1.studentId);
+    console.log("Result of the Student is "+student1.result());
+    ```  
+ #### Object KEY  
+ Object.key is used to access different Properties of an object  . In the above example, there are few object keys like studentname,studentMark etc.  
+ 
+ 
     
     
     
