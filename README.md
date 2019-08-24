@@ -271,7 +271,28 @@ Its old concept. Now in ECMASCRIPT , we use class to create object
  #### Object KEY  
  Object.key is used to access different Properties of an object  . In the above example, there are few object keys like studentname,studentMark etc.  
  
- 
+### JSON  
+It stands for JAVASCRIPT OBJECT NOTATION  
+Its similar to Object Literals  Except the below differences  
+1. Object Literals Double quotes are optional for the keys , but in JSON double quotes are complosury for Keys  
+2. In Object Literals, we can write Functions() , but in JSON, functions are not allowed.  
+  
+**JSON mainly used to exchange data over the network, server to browser and vice versa.ALso it can store local storage and session storage**  
+**SYNTAX**  
+{"name":"Siba","age":29,"city":"Bhubaneswar"};  
+  
+### stringify  
+The JSON.stringify() is used to convert Object Literals to JSON format.JSON is a text format which follows Javascript Object Literals Syntax. JSON is mainly used to store or exchange data between Browser and Server  
+**SYNTAX**    
+JSON.stringify(object Reference);  
+**EXAMPLE**  
+JSON.stringify(student);  
+  
+### JSON.Parse  
+parse method is used to convert JSON to Object literals  
+**parse SYNTAX**  
+JSON.parse(json String);  
+
     
     
     
