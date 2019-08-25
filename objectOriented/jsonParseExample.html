@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Parse Example</title>
+</head>
+<body>
+<h1><b><u>JSONPARSE EXAMPLE</u></b></h1><br> <br>
+
+<h3>For the result please see the values in console</h3>
+
+<script language="javascript">
+
+function Student(a,b,c){
+    this.studentId = a;
+    this.studentName = b;
+    this.studentMark = c;
+    this.result = function(){
+        if(this.studentMark>40){
+            return "Pass";
+        }
+        else{
+            return "Fail";
+        }
+    };
+} 
+
+var str = '{"name":"Sibaprasad","age":29,"Address":"Bhubaneswar"}'; 
+var student = JSON.parse(str);
+console.log("JSON Parse Example "+JSON.parse(str));
+console.log("Name "+student.name);
+  </script>
+</body>
+</html>
