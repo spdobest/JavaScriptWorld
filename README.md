@@ -493,7 +493,109 @@ When the web page has been opened in the browser, DOM will be automatically crea
 • The changes made to DOM are called as "pol manipulation DOm manipulations are performed using JavaScript.  
 The entire browser window is called as "window The webpage running on the browser is "document". It has only one main element called htm it has two children shead and There are many children for both <head> and <body>.  
     
-![alt tag](https://github.com/spdobest/wipro_weather_assignment/blob/master/screenshots/ss.jpg)       
-    
+![alt tag](https://github.com/spdobest/JavaScript/blob/master/Images/dom.png)      
+  
+### WINDOW  
+Window Object represent entire browser Window  
+It has the following methods and properties  
+**1. location.href -**  window.location.href - It represent the current url of the browser window  
+**2. navigation.userAgent -** This property represent the name of the current browser     
+**3. Screen -** window.navigator.screenX,window.navigator.screeny - It represent the position of x in the browser screen     
+**4. alert -** window.alert("Message"); It will show alert dialog in the window  
+**5. confirm -** window.confirm("message"); it will show confirm dialog iwth ok and cancel button, It returns true, if the user clicks okay, and return false if the user clicks cancel    
+var result = window.confirm("Do you want to delete ?");
+if(result){  
+// code to delete  
+}  
+else{  
+// dont delete  
+}  
+**6. print -** window.print(); it will show printer dialog     
+**7. setTimeOut -**  This method calls the specified function, after completion of specified no. of millis  
+Note: 1000 milli seconds 1 second  
+  
+***Syntax  
+window.setTimeout(function, milliseconds)***    
+**8. setInterval -**  
+his method calls the specified function repeatedly, for every completion of specified no. of milliseconds.  
+***Syntax:
+Window.setinterval(function, milliseconds)***
+**9. scroll -** It will scroll the window horizontally or vertically.  
+Syntax - window.scroll(x,y);  
+**10. open -** It will open a child window in browser. It is mainly used for Add.  
+  
+### DOCUMENTS  
+The document object represent the current working webpage  
+It has properties and methods to manipulate webpages  
+  
+***1. Title***  Represent the title   
+***2. Head***  Represent the Head  
+***3. Body*** Represent the Body  
+***4. image*** Represent the Image   
+***5. Links*** Represent the Links   
+***6. URL*** Represent the URL  
+  
+***7.document.write("Message")***
+***8.document.getElementById("id")***
+***9.document.getElementByName("name")***
+***10.document.getElementByTagName("tag name")***
+***11.document.getElementByClassName("class name")***  
+***12.document.querySelector()***  
+***13.document.querySelectorAll()***  
+***14.document.write("Message")***  
+  
+### ELEMENTS  
+It represents a single tag  
+It has properties and methods to manipulate the elements.  
+**1.TAG NAME** It represent the name of the TAG.  
+document.getElementById('id').tagName;  
+**2. id** It represent the id Of the tag.  
+document.getElementById('id').id;  
+**3. innerHTML*** The property represent the content of the TAG.  
+document.getElementById('id').innerHTML;  
+***4. innerText** It represent the content of the tag without tags  
+document.getElementById('id').innerText;  
+  
+### style 
+The property represents CSS styles of the TAG.  
+
+
+### THERE ARE SOME OTHER PROPERTIES   
+SCROLLTOP
+setAttribute
+getAttribute  
+removeAttribute  
+hasAttribute  
+focus  
+click  
+remove  
+createElement  
+appendChild  
+  
+### LIST OF EVENTS  
+**1. CLICK** 
+**2. dbClick**   
+**3. mouseOver**  
+**4. mouseOut** 
+**5. mouseMove** 
+**6. keyUp** 
+**7. keyPress** 
+**8. focus** 
+**9. blur** 
+**10. change** 
+**11. contextMeu** 
+**12. cut** 
+**13. copy** 
+**14. paste** 
+**15. CLICK** 
+**16. CLICK** 
+**17. CLICK** 
+  
+### VALIDATIONS  
+Validation is a process of checking the form input values wheather the provided values are corrent or not  
+If all the input values are correct then only we will allow the form to be submitted.  
+If any of the input values are not correct then we will stop submitting the form and show some error  
+we use event.preventDefault() method to show the error  
+
     
     
