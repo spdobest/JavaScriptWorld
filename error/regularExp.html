@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Date Example </title>
+     
+</head>
+
+<body>
+<h1><b><u>REGULAR EXPRESSION</u></b></h1>
+   
+<form id="f1">
+        Username
+        <input type="text" id="texetEmail">*
+        <span id="spanEmail" class="error"></span><br>
+        
+        Password:
+        <input type="mobile" id="txtMobile">*
+        <span id="spanMobile" class ="error"></span><br>
+        <input type="submit" value="Login">
+
+</form>
+
+<script language="javascript">
+
+document.getElementById('f1').addEventListener('submit',fun1);
+
+function fun1(event){
+    var email = document.getElementById('txtEmail').value;
+    var regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(regexEmail.test(email) == false){
+        event.preventDefault();
+        document.getElementById('spanEmail').innerHTML = "INVALID email Id";
+    }
+    else{
+        document.getElementById('txtEmail').innerHTML = "";
+    }
+
+    var mobileNo = document.getElementById('txtMobile').value;
+    var phoneno = /^\d{10}$/;
+    if(phoneno.test(mobileNo) == false){
+        event.preventDefault();
+        document.getElementById('spanMobile').innerHTML = "INVALID Mobile Number";
+    }
+    else{
+        document.getElementById('txtMobile').innerHTML = "";
+    }
+}
+        
+    </script>
+
+</body>
+</html>

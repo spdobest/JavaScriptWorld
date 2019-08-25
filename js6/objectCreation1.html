@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>JS 6</title>
+     
+</head>
+
+<body>
+<h1><b><u>Object Creation using class in Javascript 6</u></b></h1>
+ 
+<form id="f1">
+        StudentID
+        <input type="text" id="studentId">*<br>
+        <span id="spanStudentId" style="color:red" class="error"></span><br>
+
+        StudentName
+        <input type="text" id="studentName">*<br>
+        <span id="spanStudentName" style="color:red" class="error"></span><br>
+
+        Mobile No
+        <input type="text" id="mobileNo">*<br>
+        <span id="spanMobileNo"  style="color:red" class="error"></span><br>
+        
+        Total Marks:
+        <input type="number" id="txtMarks">*<br>
+        <span id="spanMarks" style="color:red" class ="error"></span><br>
+        <input id="register" type="submit" value="Submit">
+
+</form>
+
+<script language="javascript">
+ 
+ class Student{
+    constructor(id,name,mobile,mark){
+        this.id = id;
+        this.mobile = mobile;
+        this.name = name;
+        this.totalMark = mark;
+    }
+
+    result(){
+        if(this.totalMark > 80){
+            return "OUTSTANDING";
+        }
+        else if(this.totalMark > 60){
+            return "Excellent";
+        }
+        else{
+            return "JUST PASS";
+        }
+    }
+ }
+
+ document.getElementById('register').addEventListener("submit",fun1);
+
+ function fun1(event){
+     var studentId = parseInt(document.getElementById('studentId').value);
+
+     if(studentId == 0){
+         event.preventDefault();
+         document.getElementById('spanStudentId').innerHTML = "ID CAN NOT BE EMPTY";
+     }
+     else{
+        document.getElementById('studentId').value = "";
+     }
+
+     var studentName = document.getElementById('studentName').value;
+     if(studentName == ''){
+         event.preventDefault();
+         document.getElementById('spanStudentId').innerHTML = "ID CAN NOT BE EMPTY";
+     }
+     else{
+        document.getElementById('studentName').value = "";
+     }
+
+     var mobileNo = document.getElementById('mobileNo').value;
+     if(studentId == ''){
+         event.preventDefault();
+         document.getElementById('spanMobileNo').innerHTML = "MOBILE NO CAN NOT BE EMPTY";
+     }
+     else{
+        document.getElementById('mobileNo').value = "";
+     }
+
+     var marks = document.getElementById('txtMarks').value;
+
+     if(marks == ''){
+         event.preventDefault();
+         document.getElementById('spanMarks').innerHTML = "TOTAL MARKS CAN NOT BE EMPTY";
+     }
+     else{
+        document.getElementById('txtMarks').value = "";
+     }
+var st = new Student(studentId,studentName,mobileNo,marks);
+console.log("STUDENT ID IS "+st.studentId);
+console.log("STUDENT ID IS "+st.studentName);
+console.log("STUDENT ID IS "+st.mobile);
+console.log("STUDENT ID IS "+st.marks);
+}
+</script>
+</body>
+</html>
