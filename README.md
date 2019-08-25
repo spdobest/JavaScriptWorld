@@ -444,7 +444,56 @@ function myFunction(value, index, array) {
   return value > 18;  
 }  
   
+### Date()  
+Its used to show dates in different formats. There are lots of date functions in javascript. You can see the methods in the example done the source code  
+  
+    ```
+    var dt = new Date();
+        document.getElementById("date").innerHTML = "DATE IS "+dt;
+        document.getElementById("date1").innerHTML = "TO LOCALDATE STRING IS "+dt.toLocaleDateString();
+        document.getElementById("date2").innerHTML = "TO LOCALTIME STRING IS "+dt.toLocaleTimeString();
+        document.getElementById("date3").innerHTML = "DAY IS "+dt.getDay();
+        document.getElementById("date4").innerHTML = "getDate() "+dt.getDate();
+        document.getElementById("date5").innerHTML = "getMonth() "+dt.getMonth();
+        document.getElementById("date6").innerHTML = "getFullYear() "+dt.getFullYear();
+        document.getElementById("date7").innerHTML = "getHours() "+dt.getHours();
+        document.getElementById("date8").innerHTML = "getMinutes() "+dt.getMinutes();
+        document.getElementById("date9").innerHTML = "getSeconds() "+dt.getSeconds();
+        document.getElementById("date10").innerHTML = "getMilliSeconds() "+dt.getMilliseconds();
+        document.getElementById("date11").innerHTML = "getHours() "+dt.getHours();
+        document.getElementById("date12").innerHTML = "getHours() "+dt.getHours();
+        ```
+  
+ ## ADVANCED JAVASCRIPT  
+   
+### Clousers  
+It is used to create private variables which will have access to set of methods only.  
+**SYNTAX**  
+var functionName = function(){
+var variableName = value;  
+return
+}  
+  
+method:function(){  
+code  
+},  
+  
+method:function(){  
+code  
+},  
+
+};
+};  
+
+  
+### DOM  
+DOM (Document Object Model) is the tree structure of html elements (tags) that are present the web page  
+  
+When the web page has been opened in the browser, DOM will be automatically create browser.  
+• The changes made to DOM are called as "pol manipulation DOm manipulations are performed using JavaScript.  
+The entire browser window is called as "window The webpage running on the browser is "document". It has only one main element called htm it has two children shead and There are many children for both <head> and <body>.  
     
+![alt tag](https://github.com/spdobest/wipro_weather_assignment/blob/master/screenshots/ss.jpg)       
     
     
     
