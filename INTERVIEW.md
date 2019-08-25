@@ -1,21 +1,28 @@
 # JAVASCRIPT INTERVIEW QUESTIONS  
   
 **1. What is JavaScript?**  
+  
 JavaScript is a client-side as well as server side scripting language that can be inserted into HTML pages and is understood by web browsers. JavaScript is also an Object based Programming language  
   
 **2. Enumerate the differences between Java and JavaScript?**  
+  
 Java is a complete programming language. In contrast, JavaScript is a coded program that can be introduced to HTML pages. These two languages are not at all inter-dependent and are designed for the different intent. Java is an object - oriented programming (OOPS) or structured programming language like C++ or C whereas JavaScript is a client-side scripting language.
   
-**3. What are JavaScript Data Types?**
+**3. What are JavaScript Data Types?**  
+  
 Following are the JavaScript Data types:  
-Number  
+***Number  
 String  
 Boolean  
 Object  
-Undefined  
-**4. What is the use of isNaN function?**  
+Undefined***   
+  
+**4. What is the use of isNaN function?** 
+  
 isNan function returns true if the argument is not a number otherwise it is false.  
+  
 **5. Between JavaScript and an ASP script, which is faster?**  
+  
 JavaScript is faster. JavaScript is a client-side language and thus it does not need the assistance of the web server to execute. On the other hand, ASP is a server-side language and hence is always slower than JavaScript. Javascript now is also a server side language (nodejs).  
 **6. What is negative infinity?**  
 Negative Infinity is a number in JavaScript which can be derived by dividing negative number by zero.  
@@ -29,7 +36,9 @@ Example:
 var x=1, y=2,  
 z=  x+y;  
 The above code is perfectly fine, though not advisable as it hampers debugging.  
+  
 **8. Write the code for adding new elements dynamically?**  
+  
         ```  
         <html> 
         <head> 
@@ -41,13 +50,15 @@ The above code is perfectly fine, though not advisable as it hampers debugging.
         </script> </head> 
         <body> <p id="firstP">firstP<p> </body> 
         </html>```  
+          
 **9.What are global variables? How are these variable declared and what are the problems associated with using them?**  
-
+  
 Global variables are those that are available throughout the length of the code, that is, these have no scope. The var keyword is used to declare a local variable or object. If the var keyword is omitted, a global variable is declared.  
   
 Example:  
 // Declare a global globalVariable = "Test";  
-The problems that are faced by using global variables are the clash of variable names of local and global scope. Also, it is difficult to debug and test the code that relies on global variables.  
+The problems that are faced by using global variables are the clash of variable names of local and global scope. Also, it is difficult to debug and test the code that relies on global variables.   
+  
 **10. What is the difference between ViewState and SessionState?**  
   
 'ViewState' is specific to a page in a session.  
@@ -55,45 +66,57 @@ The problems that are faced by using global variables are the clash of variable 
 'SessionState' is specific to user specific data that can be accessed across all pages in the web application.  
   
 **11. What is === operator?**  
-=== is called as strict equality operator which returns true when the two operands are having the same value without any type conversion.  
-**12. Explain how can you submit a form using JavaScript?**
   
+=== is called as strict equality operator which returns true when the two operands are having the same value without any type conversion.  
+  
+**12. Explain how can you submit a form using JavaScript?**  
+    
 To submit a form using JavaScript use document.form[0].submit();  
 document.form[0].submit();  
+  
 **13. How can the style/class of an element be changed?**   
   
 It can be done in the following way: 
 document.getElementById("myText").style.fontSize = "20?;  
 or  
 document.getElementById("myText").className = "anyclass";  
-**14. Explain how to read and write a file using JavaScript?**
+  
+**14. Explain how to read and write a file using JavaScript?**  
   
 There are two ways to read and write a file using JavaScript
   
 Using JavaScript extensions  
 Using a web page and Active X objects  
+  
 **15. Explain how to detect the operating system on the client machine?**  
+  
 In order to detect the operating system on the client machine, the navigator.platform string (property) should be used.  
   
 **16. What is the function of delete operator?**  
+  
 The delete keyword is used to delete the property as well as its value.   
 Example  
 var student= {age:20, batch:"ABC"};  
 delete student.age;  
+  
 **17. What is an undefined value in JavaScript?**  
+  
 Undefined value means the   
 Variable used in the code doesn't exist  
 Variable is not assigned to any value  
 Property doesn't exist  
-**18.What are all the types of Pop up boxes available in JavaScript?**
   
-Alert  
+**18.What are all the types of Pop up boxes available in JavaScript?**  
+  
+***Alert  
 Confirm and  
-Prompt  
+Prompt***  
+  
 **19.What is the use of Void(0)?**  
+  
 Void(0) is used to prevent the page from refreshing and parameter "zero" is passed while calling.  
 Void(0) is used to call another method without refreshing the page.  
-
+  
 **20.Mention what is the disadvantage of using innerHTML in JavaScript?**  
   
 If you use innerHTML in JavaScript the disadvantage is  
@@ -127,13 +150,13 @@ document.write("Welcome") is used to print the text – Welcome in the screen.
 Blur function is used to remove the focus from the specified object.  
 
 **24.What are the different types of errors in JavaScript?**  
- 
+   
 There are three types of errors:  
   
 **Load time errors:** Errors which come up when loading a web page like improper syntax errors are known as Load time errors and it generates the errors dynamically.  
 **Run time errors:**  Errors that come due to misuse of the command inside the HTML language.  
 **Logical Errors:** These are the errors that occur due to the bad logic performed on a function which is having different operation.  
- 
+   
 **25. What is the 'Strict' mode in JavaScript and how can it be enabled?**  
   
 Strict Mode adds certain compulsions to JavaScript. Under the strict mode, JavaScript shows errors for a piece of codes, which did not show an error before, but might be problematic and potentially unsafe. Strict mode also solves some mistakes that hamper the JavaScript engines to work efficiently.  
@@ -144,6 +167,7 @@ Strict mode can be enabled by adding the string literal "use strict" above the f
           "use strict";
           var v = "This is a strict mode function";
       }```
+          
 **26.What is the way to get the status of a CheckBox?**  
   
 The status can be acquired as follows -  
@@ -274,6 +298,7 @@ JavaScript Scripting language has many advantages as stated below.
 ***Scripting Language:*** It’s a language in which instructions are written for a run-time environment.   
   
 **47. What are the distinct types of Error Name Values?**  
+  
 There are 6 types of values in ‘Error Name’ Property.  
   
 **Error**               	**Description**
@@ -301,6 +326,41 @@ The variable defined with ***var*** is available anywhere within the function.
 A variable declared with ***let*** keyword has a scope only with in that block. So, 
 ***let*** has a Block Scope.  
 The variable declared with ***var*** be hoisted	The variable declared with ‘let’ be hoisted  
+  
+**50.What are all the best practices for writing JavaScript Code? How do you write better code?**  
+  
+This has many different answers. Some of the best ways are:  
+
+1. Always initialize the variables before you use them.  
+2. Always use === equals instead of ==.  
+3. Wrapping code that could thrown errors at run time and feature-based code in try...catch block.  
+4. Don’t pollute global scope and don’t use global variables.  
+5. Always use "use strict";.  
+6. Use lint tools to validate JavaScript code and avoid any potential risks.  
+7. Wrap your code in an anonymous function or Immediately Invoked Function Expressions (IIFE), so that it will affect the global scope.  
+8. Give clear name for variables and functions.  
+9. Give comments wherever needed so that the other developer understands the code better.  
+10. Place all your scripts at end.  
+11. Reduce DOM manipulations and if you need to add large dom elements by script, use document.createDocumentFragment.    
+  
+**51. What is ECMAScript 6? What are the new features?**  
+  
+ECMAScript was created to standardize JavaScript. The latest standardized JavaScript version is called ECMAScript 6 also known as ECMAScript 2015.  
+ES6 includes the following new features:  
+**arrow function
+Template strings
+rest and spread operators
+Symbols data type
+Promises
+generators**  
+
+**52.What is Ajax?**  
+  
+AJAX stands for Asynchronous JavaScript And XML. AJAX’s most appealing characteristic is its “asynchronous” nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files.  
+The two major features of AJAX allow you to do the following:  
+***Make requests to the server without reloading the page  
+Receive and work with data from the server***   
+
 
 
 
