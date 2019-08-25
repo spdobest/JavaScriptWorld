@@ -293,7 +293,157 @@ parse method is used to convert JSON to Object literals
 **parse SYNTAX**  
 JSON.parse(json String);  
 
-    
+### Undefined Vs Null  
+"undefined" represents "empty value", which is by default to assigned to every uninitial  
+  
+variables. The developer is not supposed to assign "undefined" manually.   
+null" represents "empty value", which can be assigned by the developer  
+The datatype of undefined" is "undefined"  
+The datatype of "null" is "object".  
+
+Syntax of undefined: undefined  
+Syntax of null:  
+null  
+  
+### Parse Functions  
+**1. ParseInt(String) -** It converts String to integer  
+**2. ParseFloat(String) -** It converts String to float.  
+var intNum = parseInt('123');
+var floatNum = parseFloat('123.123');  
+  
+### toFixed()  
+It is used to convert a number to String with defined number of decimal places  
+var abs = 123.toFIxed(2); // output is - 123.00  
+  
+### String Functions  
+There are number of string functions used in javascript. Here are the list and their use  
+**1. string.length -** It will print the length of the string  
+**2. string.indexOf('name') -** It will print the length of the string  
+Example  
+var str = "Please locate where 'locate' occurs!";  
+var pos = str.indexOf("locate");  
+**3. string.lastIndexOf('name') -** Same as above, but it will print the last position in the string  
+***NOTE: Both indexOf(), and lastIndexOf() return -1 if the text is not found.***  
+**4. string.search('string') -** search() method searches a string for a specified value and returns the position of the match:  
+// Extracting String Parts  
+**5. slice(start, end) -** 
+**6. substring(start, end) -**  
+**7. substr(start, length) -**  
+**8. replace** The replace() method replaces a specified value with another value in a string  
+**9. toLowerCase()*** A string is converted to lower case  
+**10. toUpperCase()*** A string is converted to lower case  
+**11. concat()** joins two or more strings  
+**12. trim()** removes space after and before string  
+**13. charAt(int position)**   
+**14. charCodeAt(int position)**  
+**15. split('')** It will convert string to array of strings  
+
+### Number Functions  
+**1. toString()** - It convert number to string  
+**2. toExponential() -** returns a string, with a number rounded and written using exponential notation.  
+**3. toFixed() -**  returns a string, with the number written with a specified number of decimals.  
+**4. toPrecision() -**  returns a string, with a number written with a specified length  
+**5. valueOf() -**  returns a number as a number.
+**6. Number() -**	Returns a number, converted from its argument.
+**7. parseFloat() -**	Parses its argument and returns a floating point number
+**8. parseInt() -**	Parses its argument and returns an integer
+**9. toString** - It convert number to string   
+  
+***There few Properties in Number.***  
+  
+***MAX_VALUE***	Returns the largest number possible in JavaScript
+***MIN_VALUE***	Returns the smallest number possible in JavaScript
+***POSITIVE_INFINITY***	Represents infinity (returned on overflow)
+***NEGATIVE_INFINITY***	Represents negative infinity (returned on overflow)
+***NaN***	Represents a "Not-a-Number" value  
+  
+### Array Functions  
+**1.toString() -** converts an array to a string of (comma separated) array values.  
+**2. join() -** method also joins all array elements into a string.  
+**3. pop() -** method removes the last element from an array.  
+**4. push() -** method adds a new element to an array (at the end).  
+**5. shift() -** method removes the first array element and "shifts" all other elements to a lower index.  
+**6. unshift() -** method adds a new element to an array (at the beginning), and "unshifts" older elements.  
+**7. length -** property provides an easy way to append a new element to an array.  
+**8. splice() -** method can be used to add new items to an array.  
+var fruits = ["Banana", "Orange", "Apple", "Mango"];  
+fruits.splice(0, 1);        // Removes the first element of fruits  
+**9. concat() -** method creates a new array by merging (concatenating) existing arrays.  
+**10. slice() -** method slices out a piece of an array into a new array.  
+**11.**  
+### Array Iteration   
+**Array.forEach()** method calls a function (a callback function) once for each array element.  
+var numbers = [45, 4, 9, 16, 25];  
+numbers.forEach(myFunction);  
+  
+**Array.map()**  
+* This method creates a new array by performing a function on each array element.    
+* This method does not execute the function for array elements without values.  
+* This method does not change the original array.  
+  
+**Array.filter()**
+The filter() method creates a new array with array elements that passes a test.   
+Example  
+var numbers = [45, 4, 9, 16, 25];  
+var over18 = numbers.filter(myFunction);  
+  
+**Array.reduce()**  
+The reduce() method runs a function on each array element to produce (reduce it to) a single value.  
+The reduce() method works from left-to-right in the array. See also reduceRight().  
+  
+var numbers1 = [45, 4, 9, 16, 25];  
+var sum = numbers1.reduce(myFunction);    
+  
+**Array.reduceRight()**  
+The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.  
+The reduceRight() works from right-to-left in the array. See also reduce().    
+  
+**Array.every()**  
+The every() method check if all array values pass a test.   
+Example  
+var numbers = [45, 4, 9, 16, 25];  
+var allOver18 = numbers.every(myFunction);   
+  
+**Array.some()**  
+The some() method check if some array values pass a test.  
+  
+**Array.indexOf()**  
+The indexOf() method searches an array for an element value and returns its position.  
+var fruits = ["Apple", "Orange", "Apple", "Mango"];  
+var a = fruits.indexOf("Apple");  
+  
+**Array.lastIndexOf()**  
+Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.  
+  
+Example
+Search an array for the item "Apple":  
+  
+var fruits = ["Apple", "Orange", "Apple", "Mango"];  
+var a = fruits.lastIndexOf("Apple");  
+  
+**Array.find()**  
+The find() method returns the value of the first array element that passes a test function.  
+
+This example finds (returns the value of) the first element that is larger than 18:
+
+Example
+var numbers = [4, 9, 16, 25, 29];  
+var first = numbers.find(myFunction);  
+function myFunction(value, index, array) {  
+  return value > 18;  
+}  
+  
+**Array.findIndex()**  
+The findIndex() method returns the index of the first array element that passes a test function.  
+This example finds the index of the first element that is larger than 18:  
+Example  
+var numbers = [4, 9, 16, 25, 29];  
+var first = numbers.findIndex(myFunction);  
+  
+function myFunction(value, index, array) {  
+  return value > 18;  
+}  
+  
     
     
     
