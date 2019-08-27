@@ -12,10 +12,13 @@ Java is a complete programming language. In contrast, JavaScript is a coded prog
   
 Following are the JavaScript Data types:  
 ***Number  
-String  
-Boolean  
-Object  
-Undefined***   
+Undefined
+Null
+Boolean
+String
+Symbol
+Number
+Object***   
   
 **4. What is the use of isNaN function?** 
   
@@ -315,7 +318,7 @@ Using ‘JavaScript Hoisting’ method, when an interpreter runs the code, all t
   
 This method is only applicable for the declaration of a variable and is not applicable for initialization of a variable.   Functions are also hoisted to the top, whereas function explanations are not hoisted to the top.  
   
-**49.What is the difference between ‘var’ and ‘let’ keyword?88  
+**49.What is the difference between ‘var’ and ‘let’ keyword?88**    
   
 The Differences are as follows:  
 
@@ -361,6 +364,128 @@ The two major features of AJAX allow you to do the following:
 ***Make requests to the server without reloading the page  
 Receive and work with data from the server***   
 
+**53. Difference between == and === ?**  
+When we compare two variables of different type e.g. a boolean with a string or a number with String using == operator, it automatically converts one type into another and return value based upon content equality, while === operator is strict equality operator in Java, and only return true if both variable of same type and also contains same value. This will be much clear with following example of == and === operator in JavaScript :  
+
+0==false   // true, because false is equivalent of 0  
+0===false  // false, because both operands are of different type  
+2=="2"     // true, auto type coercion, string converted into number  
+2==="2"    // false, since both operands are not of same type  
+  
+**54. What exactly are the JavaScript cookies?**  
+These are basically the test files have smaller size and are generally stored in a workstation. They get created automatically when a user opens a webpage. This is for the information they need to store. This could be details of the username and the information related to what they are interested in.   
+
+**55. What exactly do you know about the variable typing in JavaScript?**  
+It is basically an approach with the help of which it is possible for the developers to assign a number to any variable which can further be assigned to a string. It is also called a variable typing.  
+  
+**56. What are the scopes of a variable in JavaScript?**  
+  
+The scope of a variable is the region of your program in which it is defined. JavaScript variable will have only two scopes.
+***• Global Variables*** − A global variable has global scope which means it is visible everywhere in your JavaScript code.
+***• Local Variables*** − A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.  
+
+**57. What is the purpose of ‘This’ operator in JavaScript?**  
+  
+The JavaScript this keyword refers to the object it belongs to. This has different values depending on where it is used. In a method, this refers to the owner object and in a function, this refers to the global object.  
+  
+**58.What is Callback?**  
+  
+A callback is a plain JavaScript function passed to some method as an argument or option. It is a function that is to be executed after another function has finished executing, hence the name ‘call back‘. In JavaScript, functions are objects. Because of this, functions can take functions as arguments, and can be returned by other functions.  
+  
+**59.What are the variable naming conventions in JavaScript?**  
+  
+The following rules are to be followed while naming variables in JavaScript:  
+  
+*.You should not use any of the JavaScript reserved keyword as variable name. For example, break or boolean variable names are not valid.  
+*.JavaScript variable names should not start with a numeral (0-9). They must begin with a letter or the underscore character. For example, 123name is an invalid variable name but _123name or name123 is a valid one.  
+*. JavaScript variable names are case sensitive. For example, Test and test are two different variables.  
+
+**60. How does TypeOf Operator work?**  
+  
+The typeof operator is used to get the data type of its operand. The operand can be either a literal or a data structure such as a variable, a function, or an object. It is a unary operator that is placed before its single operand, which can be of any type. Its value is a string indicating the data type of the operand.  
+  
+**61.How to create a cookie using JavaScript?**  
+  
+The simplest way to create a cookie is to assign a string value to the document.cookie object, which looks like this-  
+  
+***Syntax :
+document.cookie = "key1 = value1; key2 = value2; expires = date";***  
+  
+**62.How to read a cookie using JavaScript?**  
+  
+Reading a cookie is just as simple as writing one, because the value of the document.cookie object is the cookie. So you can use this string whenever you want to access the cookie.  
+  
+The document.cookie string will keep a list of name = value pairs separated by semicolons, where name is the name of a cookie and value is its string value.  
+You can use strings’ split() function to break the string into key and values.  
+
+**63.How to delete a cookie using JavaScript?**  
+  
+If you want to delete a cookie so that subsequent attempts to read the cookie return nothing, you just need to set the expiration date to a time in the past. You should define the cookie path to ensure that you delete the right cookie. Some browsers will not let you delete a cookie if you don’t specify the path.  
+  
+Now let’s move on to the next section of JavaScript interview questions.  
+  
+**64.What is the difference between Attributes and Property?**  
+  
+***Attributes-***  provide more details on an element like id, type, value etc.  
+  
+***Property-***  is the value assigned to the property like type=”text”, value=’Name’ etc.  
+  
+**65.List out the different ways an HTML element can be accessed in a JavaScript code.**  
+  
+Here are the list of ways an HTML element can be accessed in a Javascript code:
+(i) getElementById(‘idname’): Gets an element by its ID name
+(ii) getElementsByClass(‘classname’): Gets all the elements that have the given classname.
+(iii) getElementsByTagName(‘tagname’): Gets all the elements that have the given tag name.
+(iv) querySelector(): This function takes css style selector and returns the first selected element.  
+  
+**66.In how many ways a JavaScript code can be involved in an HTML file?**  
+  
+There are 3 different ways in which a JavaScript code can be involved in an HTML file:  
+  
+***Inline
+Internal
+External***  
+  
+An inline function is a JavaScript function, which is assigned to a variable created at runtime. You can differentiate between Inline Functions and Anonymous since an inline function is assigned to a variable and can be easily reused. When you need a JavaScript for a function, you can either have the script integrated in the page you are working on, or you can have it placed in a separate file that you call, when needed. This is the difference between an internal script and an external script.  
+
+**67.What are the ways to define a variable in JavaScript?**  
+  
+The three possible ways of defining a variable in JavaScript are:  
+  
+***Var –***The JavaScript variables statement is used to declare a variable and, optionally, we can initialize the value of that variable. Example: var a =10; Variable declarations are processed before the execution of the code.  
+***Const –*** The idea of const functions is not allow them to modify the object on which they are called. When a function is declared as const, it can be called on any type of object.  
+***Let –*** It is a signal that the variable may be reassigned, such as a counter in a loop, or a value swap in an algorithm. It also signals that the variable will be used only in the block it’s defined in.  
+  
+**68.What is a Typed language?**  
+  
+Typed Language is in which the values are associated with values and not with variables. It is of two types:
+
+***Dynamically:*** in this, the variable can hold multiple types; like in JS a variable can take number, chars.  
+***Statically:*** in this, the variable can hold only one type, like in Java a variable declared of string can take only set of characters and nothing else.  
+  
+**69. What is the difference between Local storage & Session storage?**   
+  
+***Local Storage –*** The data is not sent back to the server for every HTTP request (HTML, images, JavaScript, CSS, etc) – reducing the amount of traffic between client and server. It will stay until it is manually cleared through settings or program.  
+  
+***Session Storage –*** It is similar to local storage; the only difference is while data stored in local storage has no expiration time, data stored in session storage gets cleared when the page session ends. Session Storage will leave when the browser is closed.  
+  
+**70. What is the difference between window & document in JavaScript?**  
+  
+***Window***	
+***JavaScript window*** is a global object which holds variables, functions, history, location.	
+***Document-*** The document also comes under the window and can be considered as the property of the window.  
+  
+**71.What is the difference between innerHTML & innerText?**  
+  
+***innerHTML –*** It will process an HTML tag if found in a string  
+  
+***innerText –*** It will not process an HTML tag if found in a string   
+
+**WHat is the use of close function**  
+  
+In Javascript close() method is used to close the current window. You must write window.close() to ensure that this command is associated with a window object and not some other JavaScript object.  
+  
+  
 
 
 
