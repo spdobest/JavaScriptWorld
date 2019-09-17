@@ -613,7 +613,17 @@ In 2015 , javascript 6 was realesed with below new features. Its looks same as j
 Javascript 6 is the superset of javascript 5  
 Below Features are available  
 **1.Class, 2.Inheritance  3.MethodOverriding  4.get and set methods  5.default Argument  6.Arrow Function  7.let  8.Const 9.rest  10.destructuring  11.Multiline String  12.String interpolation 13. reading values from Array**  
-   U
+  
+### How Javascript Works in Browser  
+  
+Every JS code run in an environment known as Execution context. It is a box , a container or a wrapper which stores variables and in which a piece of our code is evaluated and executed.  
+**GLOBAL EXECUTION CONTEXT**  
+Javascript code that is not inside any function resides inside the GLobal execution context.  
+Associated with global object in browser thats known as window object.  
+  
+var name = "SIba"; same as window.name = "Siba"  
+  
+  
   
 
 
