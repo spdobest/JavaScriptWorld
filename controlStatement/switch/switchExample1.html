@@ -109,10 +109,10 @@
             var sub4 = parseInt(document.getElementById('sub4').value);
 
             var percentage = sub1+sub2+sub3+sub4;
-
+            var total = percentage/4;
             document.getElementById("pName").innerHTML = "Name : "+name
     document.getElementById("pStandard").innerHTML = "Name : "+standard
-
+    document.getElementById("grade").innerHTML = "Name : "+total
             switch (true) {
     case (total >= 90):
     
