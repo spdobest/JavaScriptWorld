@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Arrow FUnction</title>
+</head>
+<body>
+    <h1>Understand Arrow Function</h1>
+
+    <h3>Var is Function Scope and let, const are block scope </h3>
+    <script>
+
+    const years = [1989,1886,2001,1995];
+
+    // ES5
+    var ages5 = years.map(function(el){
+        return 2020 - el;
+    });
+    console.log(ages5);
+
+    console.log("Arrow function in ES6")
+    
+    const ages6 = years.map(el => 2020 - el);
+    console.log(ages6);
+
+    const ages6WithIndex = years.map((el,index) => 'AGE at index '+(index+1)+' is '+(2020-el));
+
+    console.log(ages6WithIndex)
+
+    const ageAnotherWay = years.map((el,index) => {
+        console.log('Index is '+index)
+        console.log('Agex is '+2020-el)
+    });
+
+    console.log(ageAnotherWay);
+
+    </script>
+</body>
+</html>

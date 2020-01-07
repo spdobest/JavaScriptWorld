@@ -1,6 +1,9 @@
 # JavaScript
 Javascript documentation and programs  
   
+### Links    
+https://github.com/jonasschmedtmann/complete-javascript-course/tree/master/3-how-JS-works  
+  
 ## Introduction to javascript   
 
 * JavaScript is a programming language, which is used to create functionality in the web page
@@ -597,5 +600,31 @@ If all the input values are correct then only we will allow the form to be submi
 If any of the input values are not correct then we will stop submitting the form and show some error  
 we use event.preventDefault() method to show the error  
 
-    
+### TYPES OF JAVASCRIPT    
+**1. Internal Javascript** Its included inside the body tag of html file,  
+**2. External Javascript** Its a separate .js file, which included inside the htmlfile by using src tag  
+  
+<body>  
+   <script src="javascriptFile.js"> </script>  
+</body>   
+  
+# Introduction to Javascript 6 (ECMSCRIPT 6) 
+In 2015 , javascript 6 was realesed with below new features. Its looks same as java.  
+Javascript 6 is the superset of javascript 5  
+Below Features are available  
+**1.Class, 2.Inheritance  3.MethodOverriding  4.get and set methods  5.default Argument  6.Arrow Function  7.let  8.Const 9.rest  10.destructuring  11.Multiline String  12.String interpolation 13. reading values from Array**  
+  
+### How Javascript Works in Browser  
+  
+Every JS code run in an environment known as Execution context. It is a box , a container or a wrapper which stores variables and in which a piece of our code is evaluated and executed.  
+**GLOBAL EXECUTION CONTEXT**  
+Javascript code that is not inside any function resides inside the GLobal execution context.  
+Associated with global object in browser thats known as window object.  
+  
+var name = "SIba"; same as window.name = "Siba"  
+  
+  
+  
+
+
     
