@@ -2,7 +2,6 @@
 <head>
     <title>Switch case </title>
     <style>
-        
             .button1 {
               background-color:black; 
               color: #ffffff; 
@@ -14,7 +13,6 @@
               color:wheat; 
               border: 2px solid rgb(190, 192, 70);
             } 
-    
         </style>
 </head>
 
@@ -30,71 +28,56 @@
                 <td><p> CHECK DETAILS ON AGE </p></td>
             </tr>
 
-
             <tr>
-                    <td> Enter Name Of the Student </td>
+                <td> Enter Name Of the Student </td>
                     <td>
                         <input id="name" placeholder="Enter Name">
-                    </td>
+                </td>
     
-                </tr>
-
-                <tr>
-                        <td> Enter Standard Of the Student </td>
-                        <td>
-                            <input id="standard" placeholder="Enter Standard">
-                        </td>
-        
-                    </tr>
+            </tr>
+            <tr>
+                <td> Enter Standard Of the Student </td>
+                <td>
+                    <input id="standard" placeholder="Enter Standard">
+                </td>
+            </tr>
 
             <tr>
-                    <td> Enter Mark in Subject 1 </td>
-                    <td>
-                        <input id="sub1">
-                    </td>
-                </tr>
+                <td> Enter Mark in Subject 1 </td>
+                <td>  <input id="sub1"> </td>
+            </tr>
 
-                <tr>
-                        <td> Enter Mark in Subject 2 </td>
-                        <td>
-                            <input id="sub2"> 
-                        </td>
-                    </tr>
+            <tr>
+                <td> Enter Mark in Subject 2 </td>
+                <td>  <input id="sub2"> </td>
+            </tr>
 
-                    <tr>
-                            <td> Enter Mark in Subject 3 </td>
-                            <td>
-                                <input id="sub3">
-                            </td>
-                        </tr>
+            <tr>
+                <td> Enter Mark in Subject 3 </td>
+                <td> <input id="sub3"> </td>
+            </tr>
 
-                        <tr>
-                                <td> Enter Mark in Subject 4 </td>
-                                <td>
-                                    <input id="sub4">
-                                </td>
-                            </tr>
-
-            
+            <tr>
+                <td> Enter Mark in Subject 4 </td>
+                <td><input id="sub4"></td>
+            </tr>
 
             <tr>
                 <td><button onclick="getDetails()">Get The Details</button></td>
             </tr>
 
             <tr>
-                    <td><p id="pName">Name - </td>
-                </tr>
+                <td><p id="pName">Name - </td>
+            </tr>
 
-                <tr>
-                        <td><p id="pStandard">Details - </td>
-                    </tr>
+            <tr>
+                <td><p id="pStandard">Details - </td>
+            </tr>
 
-                    <tr>
-                            <td><p id="grade">Grade -  </td>
-                        </tr>
-
+            <tr>
+                <td><p id="grade">Grade -  </td>
+            </tr>
         </table>
-
     </form>
 
     <script language="javascript">
@@ -129,13 +112,11 @@
         break;
         default :
         document.getElementById("grade").innerHTML = "GRADE  : PASS"
+    }
+
 }
 
-        }
-
-
-
-    </script>
+</script>
 
 </body>
 
