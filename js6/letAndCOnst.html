@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>Let and Const</title>
+</head>
+<body>
+    <h1>Use of let and Const</h1>
+
+    <h3>Var is Function Scope and let, const are block scope </h3>
+<script>
+
+var name = "siba";
+var age = 30;
+name = "Sibaprasad"
+
+console.log(name)
+
+// ES6
+const name6 = "Sibaprasad Mohanty";  // it cant be change , so we use const
+let age6 = 31;// it can be change so we use constr
+
+console.log(name6+" Age "+age6);
+
+
+
+    console.log("Welcome to JavaScrift");
+    var a = 12;
+    var b = 13;
+    var sum = a+b;
+    console.log("sum of a and b is "+sum)
+
+    function driverlicence5(passedTest){
+
+        var name = "Siba";
+var age = 31;
+
+if(passedTest){
+
+
+
+console.log(name+" is "+age+" years age")
+
+}
+
+    }
+
+    driverlicence5(true)
+
+    function driverlicence6(passedTest){
+
+//const name = "Siba";
+// let age = 31;
+
+if(passedTest){
+
+const name = "Siba";
+let age = 31;
+
+console.log(name+" is "+age+" years age")
+// if we use let and const inside this block, it will not work
+}
+
+    }
+
+    driverlicence6(true)
+
+    // here is another example
+
+    var i = 23;
+    for(let i = 1;i<5;i++){
+        console.log(i);
+    }
+    console.log(i);
+
+
+    </script>
+    </body>
+</html>

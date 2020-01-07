@@ -60,20 +60,20 @@
 <td><input id="item" placeholder="ENter Array Item"></td>
 </tr>
 
-<tr>
+<!-- <tr>
 <td>Enter POSITION TO REMOVE</td>
 <td><input id="remove" placeholder="Enter position to remove"></td>
+</tr> -->
+
+<tr>
+    <td><button class="button button" onclick="addItem(); return false " >Insert</button></td>
+    <td><button class="button button1" onclick="removeItem()" >REMOVE</button></td>
+    <td><button class="button button2" onclick="printSize()" >SIZE</button></td>
+    <td><button class="button button3" onclick="printValue(); return false " >PRINT</button></td>
 </tr>
 
 <tr>
-    <td><button class="button button" onclick="return addItem(this.form,'Addition')" >Insert</button></td>
-    <td><button class="button button1" onclick="return removeItem(this.form,'Substraction')" >REMOVE</button></td>
-    <td><button class="button button2" onclick="return printSize(this.form,'Multiplication')" >SIZE</button></td>
-    <td><button class="button button3" onclick="return printValue(this.form,'Division')" >PRINT</button></td>
-</tr>
-
-<tr>
-        <td><button class="button button4" onclick="return reset(this.form)" >Reset</button></td>
+        <td><button class="button button4" onclick="reset(this.form)" >Reset</button></td>
 </tr> 
 
 <tr>
@@ -88,22 +88,31 @@
 
 var array=[];
 
-function addItem(form,item)
+function addItem()
 { 
-    array.push(document.getElementById('item').value);
+
+var insertElement = document.getElementById('item').value;
+    array.push(insertElement);
+    printValue();
 }
 
-function removeItem(form,actionType)
+function removeItem()
 { 
-
+  if(isNotEmptyArray(array)){
+    array.pop();
+    printValue();
+  }
+  else{
+    alert("Error Is Empty")
+  }
 }
 
-function printSize(form,actionType)
+function printSize()
 { 
-
+  document.getElementById("p1").innerHTML = "ARRAY SIZE IS "+array.length; 
 }
   
-function printValue(form,actionType)
+function printValue()
 { 
     if(isNotEmptyArray(array)){
         var arrayStr="";

@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>SPREAD OPERATOR</title>
+</head>
+<body>
+    <h1>Use of Spread Operator</h1>
+
+    <h3>  </h3>
+<script> 
+function addFourAges(a,b,c,d){
+    return a+b+c+d;
+}
+
+var sum = addFourAges(12,23,34,45);
+console.log(sum);
+
+
+// ES5
+var ages = [18,19,20,25]
+
+var sum2 = addFourAges.apply(null,ages);
+console.log(sum2);
+
+// ES6
+const sum3 = addFourAges(...ages);
+console.log(sum3)
+
+console.log('Another example');
+
+const familySiba = ['Siba','Prasad','Mohanty'];
+const familySatya = ['Satya','Narayan','Mohanty'];
+
+const bigFamily = [...familySiba, ...familySatya];
+console.log(bigFamily);
+
+    </script>
+    </body>
+</html>
