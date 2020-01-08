@@ -7,6 +7,69 @@
 
     <h3>Var is Function Scope and let, const are block scope </h3>
 <script> 
-    </script>
-    </body>
+
+var Person5 = function(name,birthyear,job){
+    this.name = name;
+    this.birthyear = birthyear;
+    this.job = job;
+}
+
+Person5.prototype.calculateAge = function(){
+var age = 2020 - this.birthyear;
+console.log('Birth Year is '+age);
+}
+
+var Athlets5 = function(name,birthyear,job,olympic,medals){
+    Person5.call(this,name,birthyear,job);
+    this.olympic = olympic;
+    this.medals = medals;
+}
+
+Athlets5.prototype = Object.create(Person5.prototype);
+
+var siba = new Athlets5('siba',1989,'','Badminton',2);
+
+siba.calculateAge();
+
+// using ES6
+
+class Person{
+
+constructor(name,birthyear,job){
+    this.name = name;
+    this.birthyear = birthyear;
+    this.job = job;
+}
+
+calculateAge(){
+    var age = 2020 - this.birthyear;
+    console.log('AGE is '+age);
+}
+
+}
+
+class Athelet extends Person{
+
+constructor(name,birthyear,job,olympic,medals){
+    super(name,birthyear,job);
+    this.olympic = olympic;
+    this.medals = medals;
+}
+
+wonMedal(){
+    ++this.medals;
+    console.log('Medal Own '+this.medals);
+}
+
+}
+
+var person = new Person('siba',1989,'Software ENgineer');
+person.calculateAge();
+
+var athelets = new Athelet('siba',1989,'software','Cricket',2);
+athelets.calculateAge();
+athelets.wonMedal();
+
+</script>
+</body>
 </html>
