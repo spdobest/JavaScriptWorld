@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BMI Comparison</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form onsubmit="return false;">
+         <table width='100%' boarder='#000' bgColor="#d3d3d3">
+
+            <tr>
+                <td><p>BMI COmparison of 2 Persons</p></td>
+            </tr>
+
+            <tr>
+                <td>Enter Name Of the Person 1 : </td>
+                <td><input id="person1Name" placeholder="Name Of Person1" type="text"></td> 
+            </tr>
+
+            <tr>
+                <td>Enter Mass Of the Person 1 : </td>
+                <td><input id="person1Mass" placeholder="Mass Of Person1" type="text"></td> 
+            </tr>
+            <tr>
+                <td>Enter Height Of the Person 1 : </td>
+                <td><input id="person1Height" placeholder="Height Of Person1" type="text"></td>
+            </tr>
+
+           
+
+            <tr>
+                <td>Enter Name Of the Person 2 : </td>
+                <td><input id="person2Name" placeholder="Name Of Person2" type="text"></td> 
+            </tr>
+
+            <tr>
+                <td>Enter Mass Of the Person 2 : </td>
+                <td><input id="person2Mass" placeholder="Mass Of Person2" type="text"></td> 
+            </tr>
+            <tr>
+                <td>Enter Height Of the Person 2 : </td>
+                <td><input id="person2Height" placeholder="Height Of Person2" type="text"></td>
+            </tr>
+
+            <tr><td><button type="submit" onclick="compareBmi()">Compare</button> </td></tr>
+
+         </table>
+        </form>
+        <script  language="javascript">
+        
+        function compareBmi(){
+
+            var name1 = document.getElementById('person1Name').value;
+            var mass1 = parseInt(document.getElementById('person1Mass').value);
+            var height1 = parseInt(document.getElementById('person1Height').value);
+
+            var bmi1 = mass1/(height1*height1);
+
+            var name2 = document.getElementById('person2Name').value;
+            var mass2 = parseInt(document.getElementById('person2Mass').value);
+            var height2 = parseInt(document.getElementById('person2Height').value);
+
+            var bmi2 = mass2/(height2*height2);
+
+            console.log(bmi1+" "+bmi2);
+
+            if(bmi1>bmi2){
+                alert('Bmi of Person1 is Greater than Person 2');
+            }
+            else if(bmi1<bmi2){
+                alert('Bmi of Person2 is Greater than Person1');
+            }
+            else {
+                alert('Both have same BMI');
+            }
+        }
+
+        </script>
+    </body>
+</html>
