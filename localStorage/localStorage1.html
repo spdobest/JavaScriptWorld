@@ -122,6 +122,10 @@
   </head>
   <body>
     <h1>Local Storage Example</h1>
+    <div id="error" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+      </div>
     <div class="main-block">
       <!-- <div class="left-part">
         <i class="fas fa-graduation-cap"></i>
@@ -161,12 +165,14 @@
         <td><button class="button button" onclick="fillForm(); return false" >View From Local</button></td> 
       </form> 
 
-    </div>
-
     <div id="error" class="alert">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
         <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
       </div>
+
+    </div>
+
+
 
     <script>  
 
@@ -188,7 +194,14 @@ constructor(name,email,mobilenumber,password,course){
 
 }
 
-
+function showOrHideProgress(isTrue) {
+    if(isTrue){
+        document.getElementById("error").style.visibility = "visible"; 
+    }
+    else{
+        document.getElementById("error").style.visibility = "hidden"; 
+    }
+}
 
 function saveInLocal() {
 
@@ -196,7 +209,7 @@ function saveInLocal() {
 
     if(checkBox.checked == false){
 //alert("Please check the checkbox");
-document.getElementById("error").style.visibility = "visible"; 
+        showOrHideProgress(false);
     }
     else{
         let name = document.getElementById('fname').value;
