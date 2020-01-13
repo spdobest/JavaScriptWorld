@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+        <title>JavaScript to do list</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+    
+        <div class="todo-wrapper">
+            <h2>My to-do list</h2>
+            <p>Double-click an item to mark it complete.</p>
+            <form name="todo-adder">
+                <input type="text" id="todo-entry-box" />
+            </form>
+            <button id="add-button" class="pretty-button" onclick="changeText2(); return false">Add</button>
+            <br />
+            <ol id="todo-list">
+            </ol>
+            <div id="control-wrapper">
+                <button id="clear-completed-button" class="pretty-button" >Clear Completed</button>
+                <button id="empty-button" class="pretty-button">Empty List</button>
+                <button id="save-button" class="pretty-button">Save List</button>
+            </div>
+        </div>
+    
+        <script  language="javascript">   // src="script.js"
+        
+        var list = document.getElementById('demo');
+
+
+var list = document.getElementById("todo-list");
+
+function changeText2() {
+    var firstname = document.getElementById('todo-entry-box').value; 
+    console.log(firstname);
+    var entry = document.createElement('li');
+    entry.appendChild(document.createTextNode(firstname));
+    list.appendChild(entry);
+}
+        
+        </script>
+    </body>
+    
+    </html>
