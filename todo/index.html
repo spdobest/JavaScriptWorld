@@ -19,8 +19,8 @@
             </ol>
             <div id="control-wrapper">
                 <button id="clear-completed-button" class="pretty-button" >Clear Completed</button>
-                <button id="empty-button" class="pretty-button">Empty List</button>
-                <button id="save-button" class="pretty-button">Save List</button>
+                <button id="empty-button" class="pretty-button" onclick="emptyList(); return false" >Empty List</button>
+                <button id="save-button" class="pretty-button" onclick="saveinLocal(); return false" >Save List</button>
             </div>
         </div>
     
@@ -31,12 +31,37 @@
 
 var list = document.getElementById("todo-list");
 
+var arrayItems = [];
+
+function getEventTarget(e) {
+        e = e || window.event;
+        return e.target || e.srcElement; 
+    }
+
+    var ul = document.getElementById('todo-list');
+    ul.ondblclick = function(event) {
+        var target = getEventTarget(event);
+        ul.removeChild(target);
+        alert(target.innerHTML);
+    };
+
+function emptyList() {
+    arrayItems = [];
+    document.getElementById("todo-list").innerHTML = "";
+}
+
 function changeText2() {
+
     var firstname = document.getElementById('todo-entry-box').value; 
     console.log(firstname);
+    arrayItems.push(firstname);
     var entry = document.createElement('li');
     entry.appendChild(document.createTextNode(firstname));
     list.appendChild(entry);
+}
+
+function saveinLocal(){
+    window.localStorage.setItem('todo', JSON.stringify(arrayItems));
 }
         
         </script>
