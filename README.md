@@ -2,8 +2,11 @@
 Javascript documentation and programs  
   
 ### Links    
-https://github.com/jonasschmedtmann/complete-javascript-course/tree/master/3-how-JS-works  
+https://github.com/jonasschmedtmann/complete-javascript-course/tree/master/3-how-JS-works   
   
+**PROJECTS TO DO**  
+https://skillcrush.com/2018/06/18/projects-you-can-do-with-javascript/  
+    
 ## Introduction to javascript   
 
 * JavaScript is a programming language, which is used to create functionality in the web page
