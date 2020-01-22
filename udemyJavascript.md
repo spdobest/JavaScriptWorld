@@ -178,4 +178,13 @@ here the value 31 is reassigned to value1
   
 const person {
  name = "Sibaprasad";
-}  
+}   
+
+## Referencing Array Function 
+const numArray = [1,2,3];  
+const doubleNumArray  = numArray.map((num) =>{  
+num = num * 2;  
+});  
+console.log(doubleNumArray); // [2,4,6]  
+
+
