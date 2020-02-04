@@ -243,7 +243,9 @@ console.log(add5(2));  // 7
 console.log(add10(2)); // 12
 ```  
 
-## Promises  ( https://codeburst.io/a-simple-guide-to-es6-promises-d71bacd2e13a0)  
+## Promises  
+https://codeburst.io/a-simple-guide-to-es6-promises-d71bacd2e13a0   
+http://ccoenraets.github.io/es6-tutorial/promises/(PROGRAMS)    
 **Promises are a pattern that greatly simplifies asynchronous programming by making the code look synchronous and   
 avoid problems associated with callbacks.**  
 1. Promises are one of the most exciting additions to JavaScript ES6. For supporting asynchronous programming. Before **promise**  
