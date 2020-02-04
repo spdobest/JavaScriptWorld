@@ -6,14 +6,14 @@
 3. Template Literals
 4. Multi-line Strings
 5. Enhanced Object Literals
-6. Arrow Functions
-7. Promises
-8. Block-Scoped Constructs: Let and Const
-9. Classes
-10.Modules
-11.For Of Comprehensions
+6. Arrow Functions  
+7. Promises  
+8. Block-Scoped Constructs: Let and Const  
+9. Classes  
+10.Modules  
+11.For Of Comprehensions  
 12.Set and Map   
-13. Closure  
+13. Closure    
 14.
 
 
