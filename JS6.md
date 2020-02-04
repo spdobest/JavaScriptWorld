@@ -10,10 +10,10 @@
 7. Promises  
 8. Block-Scoped Constructs: Let and Const  
 9. Classes  
-10.Modules  
-11.For Of Comprehensions  
-12.Set and Map   
-13. Closure    
+10. Modules  
+11. For Of Comprehensions  
+12. Set and Map  
+13. Closure  
 14.
 
 
