@@ -10,7 +10,7 @@ body {
   
   #container {
     height: 525px;
-    width: 360px;
+    width: 500px;
     margin: 100px auto;
     background: #f7f7f7;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@ body {
   
   h1 {
     background: #1F030C;
-    color: white;
+    color: #fff;
     margin: 0;
     padding: 10px 100px;
     text-transform: uppercase;
@@ -32,11 +32,11 @@ body {
   }
   
   p {
-    padding-left: 20px;
+    padding-left: 10px;
   }
   
   form input[type="text"] {
-    width=90px;
+    width:90px;
   }
   
   input {
@@ -46,7 +46,7 @@ body {
   #billamt {
     font-size: 14px;
     /*color: #2980b9;*/
-    color: #red;
+    color: #c41b1b;
     background-color: #f7f7f7;
     width: 60%;
     padding: 5px 5px 8px 8px;
@@ -62,7 +62,7 @@ body {
     width: 60%;
     padding: 5px 5px 8px 8px;
     margin-left: 20px;
-    color: #red;
+    color: #ff0000;
     background-color: #f7f7f7;
     font-size: 14px;
   }
@@ -72,8 +72,9 @@ body {
   }
   
   #serviceQual {
+    width: 80%;
     padding: 13px 13px 20px 20px;
-    margin-left: 20px;
+    margin-left: 0px;
     font-size: 25px;
   }
   
