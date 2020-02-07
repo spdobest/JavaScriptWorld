@@ -203,6 +203,71 @@ function checkEquals(a, b) {
   return true;
 }
 console.log(checkEquals([1,2,3],[1,2,3]));
+//https://edabit.com/challenge/RMZiERz2cbjmbXruY
+function triangle(n) {
+	let num = 0;
+	for(let i = 1;i<n+1;i++){
+		num = num+i;
+	}
+	return num;
+}
+console.log(triangle(215));
+// https://edabit.com/challenge/e9oMvkS7Fb72kSehT
+function fracRound(frac, n) {
+	var res = frac.split("/");
+    let num1 = parseInt(res[0]);
+    let num2 = parseInt(res[1]);
+    console.log(num1+" "+num2);
+    var discount = (num1 / num2).toFixed(n);
+	return frac+" rounded to "+n+" decimal places is "+discount;
+} 
+console.log(fracRound("1/3", 5));
+// https://edabit.com/challenge/hxyvTffvdT4E238CY
+//testJackpot(["SS", "SS", "SS", "SS"]) ➞ true
+// testJackpot(["&&", "&", "&&&", "&&&&"]) ➞ false
+function testJackpot(result) {
+	const element0 = result[0];
+    let resultBoolean = true;
+    result.forEach(element =>{
+        if(element !== element0 ){
+            resultBoolean = false;
+        }
+    });
+    return resultBoolean;
+}
+console.log(testJackpot(["SS", "SS", "SS", "SS"]));
+// https://edabit.com/challenge/igEBCD9MzBfKfEMog
+// mysteryFunc(152) ➞ 10
+function mysteryFunc(num) {
+    let str = num.toString();
+    let arr = str.split('');
+    let result = 1;
+    arr.forEach(element =>{
+        result *=Number(element);
+    }); 
+    return result;    
+}
+console.log(mysteryFunc(152));
+// https://edabit.com/challenge/MEgXcp8cj3vNvD42v
+function returnEndOfNumber(num) {
+	const reminder = num%10;
+    let res = "";
+    switch(reminder){
+        case 1:
+        res = "-ST"
+        break;
+        case 2:
+        res = "-ND"
+         break;
+        case 3:
+        res = "-RD"
+        break;
+    default:
+    res = "-TH"
+    }
+    return num+res;
+}
+console.log(returnEndOfNumber(553));
 </script>
 </body>
 </html>
