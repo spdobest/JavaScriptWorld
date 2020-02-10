@@ -268,6 +268,47 @@ function returnEndOfNumber(num) {
     return num+res;
 }
 console.log(returnEndOfNumber(553));
+// https://edabit.com/challenge/cGXwWujXdkx6BS3CX
+function variableValid(variable) {
+	return /^[0-9]|\s/g.test(variable) ? false:true;
+}
+console.log(variableValid("2TimesN"));
+// https://edabit.com/challenge/3Efavz8YmSBia4p8s
+function indexMultiplier(arr) {
+    let sum = 0;
+	arr.forEach((element,index) =>{
+        sum+= element*index;
+    });
+    return sum;
+}
+console.log(indexMultiplier([-3, 0, 8, -6]));
+// https://edabit.com/challenge/MXChCnzCSBobgY4Ex
+function flatten(arr) {
+  arr2 = [];
+  for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+      arr2 = arr2.concat(arr[i]);
+  }
+  return arr2; 
+}
+console.log(flatten([[1, 2], [3, 4]]));
+// https://edabit.com/challenge/WrXmsGDGxqkjNCZtw
+function capLast(txt) {
+	let txt1 = ""+txt.substring(txt.length-1, txt.length);
+    console.log("aaa"+txt1);
+    let txt2 = txt.substring(0, txt.length-1)+txt1.toUpperCase();
+    return txt2;
+}
+console.log(capLast("Siba"));
+// https://edabit.com/challenge/MsNyn2xmTzRWjFuMT
+function evenOddTransform(arr, n) {
+    return arr.map( x => x % 2 === 0 ? x - 2*n : x + 2*n );
+}
+console.log(evenOddTransform([3, 4, 9], 3) );
+// https://edabit.com/challenge/QXWM2oo7rQNiyDsip
+function inkLevels(inks) {
+	
+}
 </script>
 </body>
 </html>
