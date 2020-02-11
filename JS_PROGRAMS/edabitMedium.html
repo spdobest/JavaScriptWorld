@@ -161,15 +161,15 @@ class Circle {
 	constructor(radious){
 		this.radious = radious;
 	}
-getArea = () => 3.14*this.radious*this.radious;
+getArea = () => (22/7)*this.radious*this.radious;
 
-getPerimeter = () => 2*3.14*this.radious;
+getPerimeter = () => 2*(22/7)*this.radious;
 
 }
 
-let q = new Circle(4.44);
-console.log(q.getArea());
-console.log(q.getPerimeter());
+let q = new Circle(11);
+console.log("CIRCLE AREA "+q.getArea());
+console.log("CIRCLE PERIMETER "+q.getPerimeter());
 // https://edabit.com/challenge/jbR9NupEL8zAZkbKx
 function matchLastItem(arr) {
     let str = "";
@@ -293,13 +293,26 @@ function flatten(arr) {
 }
 console.log(flatten([[1, 2], [3, 4]]));
 // https://edabit.com/challenge/WrXmsGDGxqkjNCZtw
-function capLast(txt) {
+function capLastOfWOrd(txt) {
 	let txt1 = ""+txt.substring(txt.length-1, txt.length);
     console.log("aaa"+txt1);
     let txt2 = txt.substring(0, txt.length-1)+txt1.toUpperCase();
     return txt2;
 }
 console.log(capLast("Siba"));
+// https://edabit.com/challenge/WrXmsGDGxqkjNCZtw
+function capLast(txt) {
+
+    var arr = txt.split(" ");
+    var sentence = "";
+    arr.forEach(element =>{
+        let txt1 = ""+element.substring(element.length-1, element.length);
+        let txt2 = element.substring(0, element.length-1)+txt1.toUpperCase();
+        sentence = sentence+" "+txt2;
+    });
+    return sentence.trim();
+}
+console.log("CAPS SENTENCE "+capLast("My Name is Siba"));
 // https://edabit.com/challenge/MsNyn2xmTzRWjFuMT
 function evenOddTransform(arr, n) {
     return arr.map( x => x % 2 === 0 ? x - 2*n : x + 2*n );
@@ -309,6 +322,73 @@ console.log(evenOddTransform([3, 4, 9], 3) );
 function inkLevels(inks) {
 	
 }
+
+// https://edabit.com/challenge/NH7uN8JRgPz23GSNq
+function parityAnalysis(num) {
+
+	let sum = 0;
+    let baseNum = num;
+
+    while(baseNum>0){
+        sum = sum+(baseNum%10); 
+        console.log(sum);
+        baseNum = baseNum/10;
+        baseNum = parseInt(baseNum);
+        console.log(baseNum);
+    }
+
+    console.log(sum);
+    console.log(sum%2 == 0)
+
+    return (num%2 == 0 && sum%2==0) || (num%2 != 0 && sum%2!=0);
+
+}
+console.log("PARITY ANALYSYS "+parityAnalysis(37));
+// https://edabit.com/challenge/QtcPzxgcZJQdsfdMS
+function progressDays(runs) {
+    let progressCount = 0; 
+	runs.forEach((element,index) =>{
+        if(index>0){
+            if(element>runs[index-1]){
+                progressCount++;
+            }
+        }
+    });
+    return progressCount;
+}
+console.log("Progress Count "+progressDays([3, 4, 1, 2]));
+// https://edabit.com/challenge/KcMmQE3bhxvfiYquQ
+function countOnes(i) {
+    sum =0;
+	while(i>0){
+        let res = i%2;
+        sum += res*10;
+        i = parseInt(i/2);
+    }
+}
+// https://edabit.com/challenge/uNzzNQPDQferAAGMc
+function reverseImage(image) {
+    let arrMain = [];
+	return image.map(element =>element.map(element1 => element1 === 0 ? 1 : 0));
+}
+console.log(reverseImage([
+  [1, 0, 0],
+  [0, 1, 0],
+  [0, 0, 1]
+]));
+// https://edabit.com/challenge/YHLaB8itA9tEDN5TG
+function doubleLetters(word) {
+	let arr = word.split(''); 
+    let bool = false;
+    arr.forEach((element,index)=>{
+        if(index > 0 && element === arr[index-1]){
+            bool =  true;
+            console.log(arr[index-1]);
+        }
+    });
+    return bool;
+}
+console.log(doubleLetters("loop"));
 </script>
 </body>
 </html>
