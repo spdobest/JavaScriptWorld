@@ -382,13 +382,141 @@ function doubleLetters(word) {
     let bool = false;
     arr.forEach((element,index)=>{
         if(index > 0 && element === arr[index-1]){
-            bool =  true;
-            console.log(arr[index-1]);
+            bool =  true; 
         }
     });
     return bool;
 }
 console.log(doubleLetters("loop"));
+//https://edabit.com/challenge/SAdqaWKRpjLfZnGKA
+function century(year) {
+    let arr1 = [''];
+	let num = parseInt(year);
+    let reminder = num%10;
+    let suffix = "";
+    if(reminder == 1){
+        suffix = "st";
+    }
+    else if(reminder == 2){
+        suffix = "nd";
+    }
+    else if(reminder == 3){
+        suffix = "rd";
+    }
+    else{
+        suffix = "th";
+    }
+    let century =0;
+
+        century = parseInt(num/100)+1;
+
+
+    return century+suffix+" century";
+}
+console.log("Century is "+century(1119));
+//https://edabit.com/challenge/3jzycf6fcgwZbvpcf
+function removeLeadingTrailing(n) {  
+	return parseFloat(n).toString();
+}
+console.log("remove Leading Zero "+removeLeadingTrailing(00123));
+// https://edabit.com/challenge/moK78CirzYbqk6g3z
+function reverseAndNot(i) {
+    let str = i.toString();
+    let arr = str.split('');
+    let revArr = arr.reverse(); 
+    return revArr.join("")+i;
+}
+console.log(reverseAndNot('123'));
+// https://edabit.com/challenge/ddXhrbFi4ozxxgYdG
+function wordsToSentence(words) {
+    let sentence = "";
+	if(words.length <= 1){
+        sentence =  words[0];
+    }
+    else{
+        words.forEach((element,index)=>{
+            if(element != undefined && element != null){
+            if(element.toString().trim().length>1){
+                if(index == words.length-1){
+                    sentence = sentence+" and "+element
+                }
+                else{
+                    sentence = sentence+" "+element
+                }
+            }
+        }
+        });        
+    }
+    return sentence.trim();
+}
+console.log('wordsToSentence '+wordsToSentence(["one","two"]));
+
+// https://edabit.com/challenge/rJPgai5r5XdXeQmLg
+function isIsogram(str) {
+	let arr = str.split(''); 
+    let res = false;
+    for(let element of arr){
+
+    let count = (str.toUpperCase().match(new RegExp(element.toUpperCase(), "g")) || []).length;
+    console.log(element+" "+count)
+        if(count>=2){
+            res =  false;
+            break;
+        }
+        else{
+            res =  true;
+        }
+    }
+    return res;
+}
+console.log("isIsogram  "+isIsogram("Moose"));
+
+function reversedBinaryInteger(num) {
+	let binNum = 0;
+	let count = 0;
+    console.log(parseInt(001));
+	while(num>0){
+        if(num%2==0){
+            binNum += Math.pow(10,count)*0;
+        }
+        else{
+            binNum += Math.pow(10,count)*1;
+        } 
+		count++;
+        num = parseInt(num/2);  
+	}
+	
+let arr = binNum.toString().split('');
+arr = arr.reverse();
+// arr = arr.map( x => x == 0 ? 1 : 0 );
+console.log(arr)
+arr = arr.join('');
+let revNum =  parseInt(arr);
+console.log(revNum);
+binNum = 0;
+count = 0;
+while(revNum>0){
+    binNum += (revNum%10)*Math.pow(2,count);
+    revNum = parseInt(revNum/10);
+    count++;
+}
+return binNum;
+
+}
+console.log("res is "+reversedBinaryInteger(31));
+// https://edabit.com/challenge/yXSTvCNen2DQHyrh6
+function getLength(arr) {
+	let count = 0;
+	arr.forEach(item => {
+		if (Array.isArray(item)) {
+			count += getLength(item);
+		} else {
+			count++;
+		}
+	});
+	return count;
+}
+console.log(getLength([1, [2, [3, [4, [5, 6]]]]]));
 </script>
 </body>
 </html>
