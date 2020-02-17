@@ -394,7 +394,19 @@ function century(year) {
 	let num = parseInt(year);
     let reminder = num%10;
     let suffix = "";
-    if(reminder == 1){
+    
+    let century =0;
+    century = num/100
+    console.log(century)
+
+    century = Math.ceil(century); 
+    
+    if(century <= 20 && century>=4){
+        suffix = "th";
+    }
+    else{
+        reminder = century%10;
+        if(reminder == 1){
         suffix = "st";
     }
     else if(reminder == 2){
@@ -406,14 +418,13 @@ function century(year) {
     else{
         suffix = "th";
     }
-    let century =0;
+    }
 
-        century = parseInt(num/100)+1;
-
+    
 
     return century+suffix+" century";
 }
-console.log("Century is "+century(1119));
+console.log("Century is "+century(1756));
 //https://edabit.com/challenge/3jzycf6fcgwZbvpcf
 function removeLeadingTrailing(n) {  
 	return parseFloat(n).toString();
@@ -517,6 +528,61 @@ function getLength(arr) {
 	return count;
 }
 console.log(getLength([1, [2, [3, [4, [5, 6]]]]]));
+
+// https://edabit.com/challenge/2nLTDz2yk4vW8Cnwv
+function reverseArr(num) {
+	let str = num.toString();
+    let arr = str.split('');
+    arr = arr.reverse();
+    let arrInt = [];
+    arr.forEach(element =>{
+        arrInt.push(parseInt(element));
+    });
+
+    return arrInt;
+}
+console.log('Reverse arrar is '+reverseArr(1485979));
+// https://edabit.com/challenge/i3b97FrfXT5mr9Lnx
+function alphNum(str) {
+	let alphabetArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    let arr = str.split('');
+    let alphaNumber = '';
+    console.log(arr);
+    arr.forEach(element =>{
+        console.log(element);
+        alphaNumber += ' '+alphabetArray.indexOf(element);
+        console.log(arr.indexOf(element));
+    });
+    alphaNumber = alphaNumber.trim();
+    return alphaNumber;
+}
+console.log("ALPHA NUM IS "+alphNum("X"));
+// https://edabit.com/challenge/KcMmQE3bhxvfiYquQ
+function countOnes(i) {
+    let binNumber = 0;
+    let count = 0;
+	while(parseInt(i)>0){
+        let num = i%2;
+        i = parseInt(i)/2;
+        console.log(i+" "+num);
+        binNumber += num*Math.pow(10,count);
+        console.log(binNumber);
+        count++;
+    }
+    console.log(binNumber);
+    let binArray = binNumber.toString().split('');
+    count = 0;
+    binArray.forEach(element =>{
+        if(element == 1){
+            count++;
+        }
+    });
+    return count;
+}
+console.log('1s count '+countOnes(100));
+function boxSeq(step) {
+	
+}
 </script>
 </body>
 </html>
