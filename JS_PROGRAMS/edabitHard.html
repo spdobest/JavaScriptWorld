@@ -1,0 +1,145 @@
+<html>
+<title>Edabit Hard</title>
+<body>
+<h1> Edabit Hard Level </h1>
+
+
+<script>
+// https://edabit.com/challenge/6R6gReGTGwzpwuffD
+function sevenBoom(arr) {
+	let returnValue = "";
+
+    for(let element of arr){ 
+        console.log('element '+element);
+        if((element+'').indexOf('7') > -1){ 
+            return "Boom!";
+            break;
+        }
+        else{
+            returnValue = "there is no 7 in the array"
+        }
+    } 
+return returnValue;
+
+}
+console.log("sevenBoom "+sevenBoom([35, 4, 9, 37]));
+// https://edabit.com/challenge/GZkdz9WEeHSBy2ScE
+function isUban(num) {
+	
+	let num100th = Math.floor(num/100)%10;
+	let num1000th = Math.floor(num/1000)%10;  
+	
+	return (num+"").indexOf('4') == -1  &&  (num100th <= 0 && num1000th <= 0);
+}
+console.log('isUban '+isUban(40));
+// https://edabit.com/challenge/GJD5x54NaFZwbtxQW
+function getStudentsWithNamesAndTopNotes(students) {
+
+    let modifiedStudentArray = [];
+
+	students.map(student =>{
+
+        console.log(student);  
+        let arrMarks = student.notes; 
+        let topMark = Math.max(...arrMarks);
+        delete student.notes;
+        student['topNote'] = topMark; 
+    });
+    return students;
+}
+
+console.log( getStudentsWithNamesAndTopNotes([
+  { name: "John", notes: [3, 5, 4]}
+])  );
+
+// https://edabit.com/challenge/4s93F8ZiEdHjmMnMv
+function reversedBinaryInteger(num) {
+	let count = 0;
+    let binaryNumber = 0;
+    while(num > 0){
+        let module = num%2; 
+        binaryNumber += Math.pow(10,count)*module;
+        count++;
+        console.log("Bin Number "+binaryNumber+" num "+num);
+        num  = Math.floor(num/2);
+        console.log(num)
+    }
+    console.log("binary num "+binaryNumber.toString().split(''));
+    binaryNumber = binaryNumber.toString().split('');
+    let binArray = [];
+    for(let i = binaryNumber.length-1;i>=0;i--){
+        binArray.push(binaryNumber[i]);
+    }
+    
+    binArray = binArray.join('');
+    console.log(binArray);
+    binArray = parseInt(binArray);
+    let convertedDecimalNum = 0;
+    count = 0;
+    while(binArray > 0){
+        let module = binArray%10; 
+        convertedDecimalNum += Math.pow(2,count)*module;
+        binArray  = Math.floor(binArray/10);
+        count++;
+    }
+return convertedDecimalNum;
+}
+
+console.log('reversedBinaryInteger '+reversedBinaryInteger(428293));
+
+// https://edabit.com/challenge/tRx22rECqK4dTJTg8
+function combinations(items) {
+    let combinations = 1; 
+    for (var i=0; i < arguments.length; i++) {
+        if(arguments[i] > 0){
+				combinations *= arguments[i];
+			}
+    }
+    return combinations;
+}
+console.log('combinations '+combinations(2, 3));
+// https://edabit.com/challenge/eCPim4XcssdZdvs32
+function numInStr(arr) {
+    let array = [];
+	arr.forEach(element =>{
+        let str = element.toString();
+        if(str.indexOf('1') > -1 || str.indexOf('2') > -1  || str.indexOf('3') > -1  || 
+        str.indexOf('4') > -1  || str.indexOf('5') > -1  || str.indexOf('6') > -1  || 
+        str.indexOf('7') > -1  || str.indexOf('8') > -1  || str.indexOf('9') > -1 ){
+            array.push(element);
+        }
+    });
+    return array;
+}
+
+// https://edabit.com/challenge/yYfQoo6rkMezauG77
+function reverseOdd(str) {
+
+    let arr = str.split(' ');
+    console.log(arr);
+    let newArray = [];
+    arr.map(function(element) { 
+        if( element.length%2 == 1 ){
+            element =  element.split("").reverse().join("");
+            console.log(element); 
+            newArray.push(element);
+            return element;
+        } 
+        else{
+            newArray.push(element);
+            return element;
+        }
+    });
+
+    
+
+
+    return newArray.join(' ');
+}
+
+console.log('reverseOdd '+reverseOdd('Siba moh'));
+
+</script>
+
+</body>
+</html>

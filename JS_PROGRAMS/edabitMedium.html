@@ -557,29 +557,6 @@ function alphNum(str) {
     return alphaNumber;
 }
 console.log("ALPHA NUM IS "+alphNum("X"));
-// https://edabit.com/challenge/KcMmQE3bhxvfiYquQ
-function countOnes(i) {
-    let binNumber = 0;
-    let count = 0;
-	while(parseInt(i)>0){
-        let num = i%2;
-        i = parseInt(i)/2;
-        console.log(i+" "+num);
-        binNumber += num*Math.pow(10,count);
-        console.log(binNumber);
-        count++;
-    }
-    console.log(binNumber);
-    let binArray = binNumber.toString().split('');
-    count = 0;
-    binArray.forEach(element =>{
-        if(element == 1){
-            count++;
-        }
-    });
-    return count;
-}
-console.log('1s count '+countOnes(100));
 function boxSeq(step) {
 	
 }
