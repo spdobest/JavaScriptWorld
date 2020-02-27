@@ -138,6 +138,300 @@ function reverseOdd(str) {
 }
 
 console.log('reverseOdd '+reverseOdd('Siba moh'));
+// https://edabit.com/challenge/8khL2WEhZ6M9onHL4
+function countLayers(rug) {
+    let set = new Set();
+    let count = 0;
+	rug.forEach(element =>{
+        set.add(element);
+    }); 
+    return set.size;
+}
+console.log('countLayers  '+countLayers([
+  "AAAAAAAAA",
+  "ABBBBBBBA",
+  "ABBAAABBA",
+  "ABBBBBBBA",
+  "AAAAAAAAA"
+]));
+// https://edabit.com/challenge/jRSST87NjECBzbwzL
+function getTotalPrice(groceries) {
+	let totalPrice = 0;
+    groceries.forEach(element =>{
+        totalPrice += element.quantity*element.price;
+     });
+     totalPrice = Math.round( totalPrice * 10 ) / 10;
+     return totalPrice;
+}
+console.log('getTotalPrice '+getTotalPrice([
+  { product: "Milk", quantity: 1, price: 1.50 }
+]));
+// https://edabit.com/challenge/ACeSvyhYe7Qrtsk5R
+function averageWordLength(str) {
+	let wordArray = str.split(' ');
+    let charCount = 0; 
+    str =  str.replace(/[^a-zA-Z ]/g, "");
+    console.log('wordArray.length '+wordArray.length);
+    console.log(str+" word count "+wordArray.length+" totalCount "+str.length);
+     
+
+    let avgWordCount = (str.length-(wordArray.length-1))/wordArray.length; 
+    return Math.round(avgWordCount * 100) / 100 ;
+}
+
+console.log('averageWordLength '+averageWordLength('Dude, this is so awesome!'));
+// https://edabit.com/challenge/7pkKPYtTJzpxRMckZ
+function isPositiveDominant(a) {
+	let set = new Set();
+	let sum = 0;
+	a.forEach(element =>{
+		if(!set.has(element) & element != 0){
+			if(element >= 0){
+			    sum++;
+		    }
+            else{
+                    sum--;
+                }
+            } 
+            set.add(element);
+    }); 
+    console.log(sum);
+	return sum > 0;
+}
+console.log('isPositiveDominant '+isPositiveDominant([1, 0, 0, -1]) );
+// https://edabit.com/challenge/pbK3wzLDvdwfEKgMt
+function findBrokenKeys(str1, str2) {
+    let arr = [];
+	for(let i in str1){
+        if(str1[i] != str2[i] && arr.indexOf(str1[i]) == -1 ){
+            arr.push(str1[i]);
+        }
+    }
+    return arr;
+}
+console.log('findBrokenKeys '+findBrokenKeys("happy birthday", "hawwy birthday"));
+// https://edabit.com/challenge/f3Lc7Z5dK3p8dahoz
+function canConcatenate(arr, target) {
+    let isAvailable = true;
+	arr.forEach(element =>{
+        element.forEach(element1 =>{
+            if(target.indexOf(element1) == -1){
+                isAvailable= false;
+            }
+        });
+    });
+    return isAvailable;
+}
+console.log('canConcatenate '+canConcatenate([[2, 1, 3], [5, 4, 7, 6, 7]], [1, 2, 3, 4, 5, 6, 7]));
+// https://edabit.com/challenge/7HiitQLp9CQGQNWJr
+function buildStaircase(height, block) { 
+    let buildingArray = [];
+    for(let i = 0;i<height;i++){
+        let arr = [];
+        for(j = 0;j<height;j++){
+            if(j<=i){
+                arr.push(block)
+            }
+            else{
+                arr.push('_');
+            }
+        }
+        buildingArray.push(arr);
+    } 
+    return buildingArray;
+}
+console.log('buildStaircase '+buildStaircase(4,'&'));
+// https://edabit.com/challenge/H8JABWQfYFN4ZSAxE
+function uniqueAbbrev(abbs, words) {
+    let lengthOfAbbs = abbs[0].length
+    let result = false;
+
+    for(let i in words){
+        let str = words[i];
+        var res = str.substring(0, lengthOfAbbs); 
+        if(abbs.indexOf(res) == -1){
+            return false;
+        }
+        if(abbs[i].length != lengthOfAbbs){
+            return false;
+        }
+    } 
+    return true;
+}
+console.log('uniqueAbbrev '+uniqueAbbrev(["bi", "ba", "bat"], ["big", "bard", "battery"]));
+// https://edabit.com/challenge/5S5HBQW6zZp8eH3eL
+function uncensor(str, vowels) {
+    let array = str.split('');
+    let newArray = [];
+    let vowelArray = vowels.split('');
+    let position = 0;
+    var replacechars = function(c){
+        return mymap[c] || c;
+    };
+    array.forEach(element =>{
+        if(element == '*'){ 
+            newArray.push(vowelArray[position]);
+            position++;
+        }
+        else{
+            newArray.push(element);
+        }
+    });
+    return newArray.join('');
+}
+console.log('uncensor '+uncensor("Wh*r* d*d my v*w*ls g*?", "eeioeo"));
+// https://edabit.com/challenge/Bd2jQS9xA6QecB34h
+function mapLetters(word) {
+    let map = new Map();
+    let arr = word.split('');
+    arr.forEach((element,index) =>{
+        if(map.has(element)){
+            let arr = map.get(element);
+            arr.push(index);
+            // map.delete(element);
+            map.set(element,arr);
+        }
+        else{
+            let arr = [index];
+            map.set(element,arr);
+        }
+    });
+    const obj = Object.fromEntries(map);
+    // console.log(map)
+    return obj;
+}
+console.log(mapLetters("imagining"));
+
+// https://edabit.com/challenge/LhMQuGstm7EENosjw
+function textToNum(phone) {
+	
+}
+// https://edabit.com/challenge/ERmrS3QrK7sEt4PAt
+function lcm(n1, n2) {
+    let lcm = 0;
+    lcm = n1>n2?n1:n2;
+    while(true){
+        if(lcm%n1==0 && lcm%n2==0){
+            break;
+        }
+        lcm++;
+    }
+    return lcm;
+} 
+console.log('LCM '+lcm(12,8));
+ 
+// https://edabit.com/challenge/uScx6aGXmNu27NYWz
+function getFrequencies(arr) {
+    let map = new Map();
+	arr.forEach(element=>{
+        if(map.has(element)){
+            let count = map.get(element);
+            count++;
+            map.set(element,count);
+        }
+        else{
+            map.set(element,1);
+        }
+    });
+    return Object.fromEntries(map);
+}
+console.log('getFrequencies '+getFrequencies([["A", "B", "A", "A", "A"]]));
+// https://edabit.com/challenge/Rr3TMAJvNiA4YDpB4
+function powerRanger(power, min, max) {
+    let sqrtMin =  Math.pow(min,1/power) ;
+    let sqrtMax =  Math.pow(max,1/power) ;
+
+    let sqrt1 = Math.ceil(Math.pow(min,1/power));
+    let sqrt2 = Math.ceil(Math.pow(max,1/power));
+
+    let sum = Math.round(sqrt2 - sqrt1);
+
+    console.log(sqrtMin);
+    console.log(sqrtMax);
+
+    if(sqrtMin%1 ==0  || sqrtMax%1 == 0 ){
+sum++;
+    }
+
+    return sum;
+}
+console.log('power ranger '+powerRanger(2, 1, 100));
+
+
+class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+}
+
+/*
+ *  Write code that adds an 'area' method to the Rectangle class' prototype
+ */
+Rectangle.prototype.area = function() {
+  return parseInt(w)*parseInt(h);
+};
+/*
+ * Create a Square class that inherits from Rectangle and implement its class constructor
+ */
+class Square extends Rectangle{
+   constructor(size) {
+        super(size, size);
+    }
+}
+
+let sq = new Square(12);
+console.log(sq.area);
+ // https://edabit.com/challenge/xvKFpQ6vzuY8dH9fn
+ function longestStreak(arr) {
+      let count = 0;
+      let arr1 = [];
+      arr.forEach((element,index) => { 
+
+        if(index<arr.length-1){
+            let date = arr[index][['date']]; 
+            date = date.substring(date.lastIndexOf('-')+1,date.length); 
+            let dateNum = parseInt(date);
+            
+            dateNum++;
+
+            let nextIndex = index+1; 
+            let nextDate = arr[nextIndex][['date']]; 
+            nextDate = nextDate.substring(nextDate.lastIndexOf('-')+1,nextDate.length); 
+            console.log(dateNum+'    '+nextDate);
+            if(dateNum == nextDate){
+                count++;
+            }
+            else{
+                arr1.push(count);
+                count = 0;
+            }
+        }
+      });
+      console.log(arr1);
+      console.log(Math.max(...arr1));
+      return  arr1.length == 0?1: Math.max(...arr1)+1;
+    }
+    console.log(longestStreak([
+    {
+    "date": "2019-09-18"
+  },
+  {
+    "date": "2019-09-19"
+  },
+  {
+    "date": "2019-09-20"
+  },
+  {
+    "date": "2019-09-21"
+  },
+  {
+    "date": "2019-09-22"
+  },
+  {
+    "date": "2019-09-23"
+  }
+]));
 
 </script>
 
