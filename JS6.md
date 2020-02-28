@@ -305,5 +305,190 @@ myProimse.then(
   () => console.log('resolved'), 
   (error) => console.log(error.message)
 );
-```
+```  
+# JS6
+we can re-declare a variable in javascript.
+var is used as whole javascript file where it declated. That means, we can access a var from anywhere in the javascript file where it declared.  
+But let have only block scope. If we define a variable using let, we can not access it outside that function.  
+const is same as let but the value can not be changed in javasctipt6.  
+  
+var counter = 123;
+var counter = 123;
+it will works fine.  
+let name = 'siba';
+let name = 'satya'; // it will show error,SyntaxError: redeclaration of var name  
+  
+ // the below code is in javascript 5  
+``` 
+    function getBook(title,auther){
+        return {
+        'title':title,
+        'author': auther
+        }
+    }  
 
+    var book = getBook('Heripoter','hk');
+    console.log(book);
+```   
+
+**now we will convert this above code to js6 format. 
+  the below code is in javascript 5** 
+    
+    
+```      
+    function getBook6(title,auther){
+        return {
+        title,
+        auther
+        }
+    }  
+
+    var book6 = getBook6('Heripoter','hk');
+    console.log(book6);
+```  
+  
+**Defined function in javascript 6 and js5**  
+```  
+    function printName(){
+      console.log('`MY name is Siba');
+    }
+    or
+    var nameFun = function(){
+      console.log('`MY name is Siba');
+    }
+    printName()
+    nameFun();
+```  
+**In javascript we can do this using ARROW function**  
+``` 
+    const myNameinJs6 = () =>{
+      console.log('`MY name is Siba');
+    }
+    myNameinJs6();  
+    // with Parameter
+    const myLocation = (name,location) =>{
+      console.log('MY name is ${name} and my location is ${location}');
+    }
+    // if there is only one parameter you can skip the brackets
+     const myLocation = name =>{
+      console.log('MY name is ${name}');
+    }  
+   
+   
+   const myLocation = () =>console.log('MY location is INDIA');
+   myLocation();
+
+    const myLocation1 = loc =>console.log('MY second location is '+loc);
+    myLocation1('Mumbai');
+``` 
+ **USE OF FUNCTION in JS5 and JS6**  
+ ```  
+    var user = {
+        fName:'Siba',
+        lName:'Mohanty',
+        showName  = function(){
+            console.log('My name is '+fName);
+
+            var that = this;
+            var fullName = function() {
+                console.log('My full name is '+that.fName+' '+that.lName);
+            }
+            fullName();
+        }
+    }
+    user,showName();
+```      
+**NOTE - in the above code we declared function inside another function. To access the variable fName and lName, we used that. Because if we use this.fname ther, it will be undefined**.  
+  
+**Lets explain how we will define in JS6**  
+ ```  
+    var user1 = {
+        fName:'Siba',
+        lName:'Mohanty',
+        showName  = function(){
+            console.log('My name is '+fName); 
+            var fullName = () =>  console.log('My full name is '+this.fName+' '+this.lName);
+            fullName();
+        }
+    }
+    user1,showName();
+```      
+**Use of FOREACH, MAP and FILTER**  
+ ``` 
+ const shoppingList = ['Milk','Cow','Eggs','Bananas','Choco']
+
+forEach
+ 
+     shoppingList.forEach( element =>{
+      // write your operation here
+     });
+
+     shoppingList.forEach( (element,index) =>{
+      // write your operation here
+     });  
+ 
+ Use of Map. 
+ 
+     const newList = shoppingList.map(item => item +" new");
+     
+ Use of filter  
+ 
+     const newList = shoppingList.filter(item =>{
+      return item === 'Eggs';
+     })
+ ``` 
+   
+ **CLASSES AND OBJECTS**  
+ 
+ ``` 
+   function Person(name,age,haircolor){
+     this.name = name;
+     this.age = age;
+     this.haircolor = haircolor;
+     showName(){
+        console.log('My name is '+this.name);
+     }
+   }
+ 
+   Person.prototype.sayName = function(){
+      console.log('My name is '+this.name);
+   };
+ 
+   var sp = new Person('siba','23','black');
+   sp.showName();
+   sp.sayName();
+ 
+   function Siba(occupation,hobby,name,age,haircolor){
+       Person.call(this,name,age,haircolor)
+       this.occupation = occupation;
+       this.hobby = hobby;
+   }
+  
+  How to use all the function of Person inside Siba class.  
+  Siba.prototype = Object.create(Person.prototype);  
+  ``` 
+  
+ **Above is using JS5, now lets use JS6 for**  
+``` 
+ class  ShoppingList{
+    constructor(items,price){
+      this.items = items;
+      this.price = price;
+    }
+    sayList(){
+      console.log(this.items);
+    }
+ }
+ 
+ const myList = new SHoppingList(['milk','rice','egg']);  
+   
+ class Product extends ShoppingList{
+    constructor(items,price,amount,cost){
+        super(items,proice);
+        this.amount = amount;
+        this.cost = cost;
+    }
+ }  
+``` 
+  
+  
