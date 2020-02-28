@@ -490,5 +490,36 @@ forEach
     }
  }  
 ``` 
+**PROMISE,ASYNC,CALLBACK**  
+// es5.  
+``` 
+console.log('start');
   
+  function getData(data,callback){
+    setTimeout( () =>{
+        console.log('Reading from database');
+        calback({data: data});
+    },2000);
+  }
   
+  getData(5,function(data)){
+    console.log(data);
+  });
+  
+  console.log('finish');
+ ```  
+**Now using ES6**  
+ ``` 
+  const prom = new Promise( (resolve, reject) =>{
+      setTimeout( () =>{
+        console.log('Reading from database');
+        resolve(200);
+    },2000);
+  }  
+  
+  prom.then(data =>{
+    console.log(data);
+  })
+  .catch(err => console.log(err));
+ ```   
+ 
