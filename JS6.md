@@ -191,7 +191,7 @@ console.log( lib.mult(2, 3) ); // 6
 ```  
   
 **ES5 to ES6**   
-'''
+``` 
 // ES5 code
 var lib = {
   sum:  function(a, b) { return a + b; },
@@ -222,7 +222,8 @@ const lib = {
 
 console.log( lib.sum(2, 3) );  // 5
 console.log( lib.mult(2, 3) ); // 6
-```    
+```     
+  
 **FOR MORE DETAILS followthe below Link**  
 https://www.sitepoint.com/es6-enhanced-object-literals/   
   
