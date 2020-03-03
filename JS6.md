@@ -222,12 +222,32 @@ const lib = {
 
 console.log( lib.sum(2, 3) );  // 5
 console.log( lib.mult(2, 3) ); // 6
-``  
+```    
 **FOR MORE DETAILS followthe below Link**  
 https://www.sitepoint.com/es6-enhanced-object-literals/   
   
 ## Closure  
-**https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures**  
+**https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures**   
+A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables — a scope chain.  
+**The closure has three scope chains:**.  
+-> it has access to its own scope — variables defined between its curly brackets  
+-> it has access to the outer function’s variables  
+-> it has access to the global variables  
+  
+**A simple Closure**  
+```
+function outer() {
+   var b = 10;
+   function inner() {
+        
+         var a = 20; 
+         console.log(a+b);
+    }
+   return inner;
+}
+```  
+For more details, Please check the link below  
+https://medium.com/@prashantramnyc/javascript-closures-simplified-d0d23fa06ba4
 
 ```
 function makeAdder(x) {
