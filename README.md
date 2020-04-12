@@ -1,6 +1,23 @@
 # JavaScript Basics 
 JavaScript is the programming language of HTML and the Web.  
-  
+https://stackoverflow.com/questions/30039512/how-to-view-my-html-code-in-browser-with-visual-studio-code 
+##  JavaScript Course Link 
+https://www.youtube.com/watch?v=Qqx_wzMmFeA
+##  JAVASCRIPT IDE
+- Visual Studio code
+- add the below code in task.json file  
+```
+    {
+        "version": "0.1.0",
+        "command": "Chrome",
+        "osx": {
+            "command": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        },
+        "args": ["${file}"]
+    }
+```
+https://www.webucator.com/blog/2016/06/launch-files-browser-visual-studio-code/
+
 ## Why yopu need javascript ?
 JavaScript is one of the 3 languages all web developers must learn:  
 - HTML to define the content of web pages
