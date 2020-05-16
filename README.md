@@ -94,23 +94,22 @@ its take one value as input and check if it matches with other values in the cas
             var percentage = sub1+sub2+sub3+sub4;
 
             document.getElementById("pName").innerHTML = "Name : "+name
-    document.getElementById("pStandard").innerHTML = "Name : "+standard
+            document.getElementById("pStandard").innerHTML = "Name : "+standard
 
             switch (true) {
-    case (total >= 90):
-    
-    document.getElementById("grade").innerHTML = "GRADE  : OUTSTANDING"
-        break;
-    case (total >= 80): 
-    document.getElementById("grade").innerHTML = "GRADE  : EXCELENT"
-        break;
-    case (total >= 70):
-    document.getElementById("grade").innerHTML = "GRADE  : AVERAGE"
-        break;
-        case (total >= 60):
-    document.getElementById("grade").innerHTML = "GRADE  : BELOW AVERAGE"
-        break;
-        default :
+              case (total >= 90):
+                  document.getElementById("grade").innerHTML = "GRADE  : OUTSTANDING"
+              break;
+              case (total >= 80): 
+                  document.getElementById("grade").innerHTML = "GRADE  : EXCELENT"
+              break;
+              case (total >= 70):
+                  document.getElementById("grade").innerHTML = "GRADE  : AVERAGE"
+              break;
+              case (total >= 60):
+                  document.getElementById("grade").innerHTML = "GRADE  : BELOW AVERAGE"
+              break;
+          default :
         document.getElementById("grade").innerHTML = "GRADE  : PASS"
             }
         }
@@ -118,10 +117,9 @@ its take one value as input and check if it matches with other values in the cas
 
 #### WHILE LOOP  
 In while loop it first check the condition then execute the code inside the while loop.  
-    
-    
+   
     ```
-         <script language="javascript">
+     <script language="javascript">
         function getDetails(){
             var num = document.getElementById('factorial').value; 
             var result = 1;
@@ -137,9 +135,7 @@ In while loop it first check the condition then execute the code inside the whil
 #### DO WHILE LOOP  
 Its do same as while loop but , first it execute the code and then check the condition  
 
-
     ```
-
     <script language="javascript">
         function getDetails(){
             var num = document.getElementById('factorial').value; 
@@ -154,14 +150,13 @@ Its do same as while loop but , first it execute the code and then check the con
     </script>```  
  
 ####  FOR LOOP  
-->For Loop mostly same as while loop.  
-->The difference is, while loop have initialization, condition, and increment and decrement in different places. But in for loop initialization, condition check and increment decrement in one line  
+- For Loop mostly same as while loop.  
+- The difference is, while loop have initialization, condition, and increment and decrement in different places. But in for loop initialization, condition check and increment decrement in one line  
   
     ```
     <script language="javascript">
         function getDetails(){
             var num = document.getElementById('factorial').value; 
-
             var result = 1;
             for(var i = 1;i<=num;i++){
                 result*=i; 
@@ -171,9 +166,9 @@ Its do same as while loop but , first it execute the code and then check the con
     </script>```
 
 ### FUNCTION  
-* Function is a reusable block in the program which is a set of statements with a name  
-* A larger program can be devided into too many parts, all individual parts is known as functions  
-* Functions are reusable that means we can call a function any number time and anywhere in the program.  
+- Function is a reusable block in the program which is a set of statements with a name  
+- A larger program can be devided into too many parts, all individual parts is known as functions  
+- Functions are reusable that means we can call a function any number time and anywhere in the program.  
       
       ```
       <script language="javascript">
@@ -189,7 +184,7 @@ Its do same as while loop but , first it execute the code and then check the con
       </script>```
 
 #### Recursion  
-It is a techniques to call the function itself in  loop  
+- It is a techniques to call the function itself in  loop  
 
     ```
         <script language="javascript"> 
@@ -204,12 +199,12 @@ It is a techniques to call the function itself in  loop
     </script>```
 
 #### ARRAY Example  
-* Array is a collection of multiple values  
-* The number of element present in the array is known as Size of the Array  
-* We can retrieve the values from the array using the index of the array which is starts with 0 and ends at size-1  
-* For example you can store the list of friends in an array  
-* In javascript there is no rule to maintain "SAME TYPE " value in an array.You can store any type of values in array. You can differ the values 
-
+- Array is a collection of multiple values  
+- The number of element present in the array is known as Size of the Array  
+- We can retrieve the values from the array using the index of the array which is starts with 0 and ends at size-1  
+- For example you can store the list of friends in an array  
+- In javascript there is no rule to maintain "SAME TYPE " value in an array.You can store any type of values in array. You can differ the values 
+  
 Create an array : var arrayName = ["Siba",123,123.23];    
 set the values : arrayName[0] = 6;  
 Get the values : arrayName[1];  
@@ -217,9 +212,9 @@ Add the new element to the Array : arrayName.push(111);
 Removing the existing Element : arrayName.splice(index, No. of element to remove);  
 
 ### Object Oriented Programming in javascript  
-* In this Object oriented programming, everything considered as Object.  
-* Object represent as a Object/ real time object in real world.  
-* Object is a collection of 2 types of parameters 
+- In this Object oriented programming, everything considered as Object.  
+- Object represent as a Object/ real time object in real world.  
+- Object is a collection of 2 types of parameters 
 **1. Properties/ Fields -** Details about the object which is stored  variables inside object.  
 **2. Methods** Manupalation on the variables. Each object have functionality. Like, Dog have some Function like barking.  
 Example  
@@ -475,54 +470,56 @@ Its used to show dates in different formats. There are lots of date functions in
 ### Clousers  
 It is used to create private variables which will have access to set of methods only.  
 **SYNTAX**  
-var functionName = function(){
-var variableName = value;  
-return
-}  
-  
-method:function(){  
-code  
-},  
-  
-method:function(){  
-code  
-},  
+```
+          var functionName = function(){
+              var variableName = value;  
+            return
+          }  
 
-};
-};  
+          method:function(){  
+              code  
+          },  
 
+          method:function(){  
+              code  
+          },  
+
+          };
+          };  
+```
   
 ### DOM  
-DOM (Document Object Model) is the tree structure of html elements (tags) that are present the web page  
-  
-When the web page has been opened in the browser, DOM will be automatically create browser.  
-• The changes made to DOM are called as "pol manipulation DOm manipulations are performed using JavaScript.  
-The entire browser window is called as "window The webpage running on the browser is "document". It has only one main element called htm it has two children shead and There are many children for both <head> and <body>.  
+- DOM (Document Object Model) is the tree structure of html elements (tags) that are present the web page.
+- When the web page has been opened in the browser, DOM will be automatically create browser.  
+- The changes made to DOM are called as "pol manipulation DOm manipulations are performed using JavaScript.  
+- The entire browser window is called as "window The webpage running on the browser is "document". It has only one main element called htm it has two children shead and There are many children for both <head> and <body>.  
     
 ![alt tag](https://github.com/spdobest/JavaScript/blob/master/Images/dom.png)      
   
 ### WINDOW  
-Window Object represent entire browser Window  
-It has the following methods and properties  
-**1. location.href -**  window.location.href - It represent the current url of the browser window  
-**2. navigation.userAgent -** This property represent the name of the current browser     
-**3. Screen -** window.navigator.screenX,window.navigator.screeny - It represent the position of x in the browser screen     
-**4. alert -** window.alert("Message"); It will show alert dialog in the window  
-**5. confirm -** window.confirm("message"); it will show confirm dialog iwth ok and cancel button, It returns true, if the user clicks okay, and return false if the user clicks cancel    
-var result = window.confirm("Do you want to delete ?");
-if(result){  
-// code to delete  
-}  
-else{  
-// dont delete  
-}  
-**6. print -** window.print(); it will show printer dialog     
-**7. setTimeOut -**  This method calls the specified function, after completion of specified no. of millis  
+- Window Object represent entire browser Window  
+- It has the following methods and properties  
+- **1. location.href -**  window.location.href - It represent the current url of the browser window  
+- **2. navigation.userAgent -** This property represent the name of the current browser     
+- **3. Screen -** window.navigator.screenX,window.navigator.screeny - It represent the position of x in the browser screen     
+- **4. alert -** window.alert("Message"); It will show alert dialog in the window  
+- **5. confirm -** window.confirm("message"); it will show confirm dialog iwth ok and cancel button, It returns true, if the user clicks okay, and return false if the user clicks cancel   
+ ``` 
+    var result = window.confirm("Do you want to delete ?");
+    if(result){  
+        // code to delete  
+    }  
+    else{  
+        // dont delete  
+    }  
+```
+- **6. print -** window.print(); it will show printer dialog     
+- **7. setTimeOut -**  This method calls the specified function, after completion of specified no. of millis  
 Note: 1000 milli seconds 1 second  
   
 ***Syntax  
 window.setTimeout(function, milliseconds)***    
-**8. setInterval -**  
+- **8. setInterval -**  
 his method calls the specified function repeatedly, for every completion of specified no. of milliseconds.  
 ***Syntax:
 Window.setinterval(function, milliseconds)***
