@@ -32,7 +32,7 @@ the inputs, interacting with server, validations etc.
 // Your Javascript codes are here  
 </script>  
   
-** NOTE : You can write <script> </script> inside <head> or <body>, But its Recomended to write inside <body>  </body> . You can write multiple  <Script> </script>. **  
+** NOTE : You can write <script> </script> inside head or body of html page, But its Recomended to write inside body. You can write multiple  <Script> </script>. **  
   
 ### console.log()  
 console.log() is used to print message/log in the browser console.  
@@ -144,10 +144,11 @@ Its do same as while loop but , first it execute the code and then check the con
         function getDetails(){
             var num = document.getElementById('factorial').value; 
             var result = 1;
-            while(num>=1){
+            do{
                 result*=num;
                 num--;
             }
+            while(num>=1);
             document.getElementById('txtFact').innerHTML = "Factorial of the Above Number is "+result;
         }
     </script>```  
@@ -155,7 +156,6 @@ Its do same as while loop but , first it execute the code and then check the con
 ####  FOR LOOP  
 ->For Loop mostly same as while loop.  
 ->The difference is, while loop have initialization, condition, and increment and decrement in different places. But in for loop initialization, condition check and increment decrement in one line  
-  
   
     ```
     <script language="javascript">
