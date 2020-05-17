@@ -1,5 +1,4 @@
-# ES 6 Tutorial  
-  
+# ES 6 Tutorial   
 ## Feature List  
 1. Default Parameters
 2. Rest and Spread Parameters
