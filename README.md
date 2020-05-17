@@ -1,524 +1,328 @@
-# ES 6 Tutorial   
-## Feature List  
-1. Default Parameters
-2. Rest and Spread Parameters
-3. Template Literals
-4. Multi-line Strings
-5. Enhanced Object Literals
-6. Arrow Functions  
-7. Promises  
-8. Block-Scoped Constructs: Let and Const  
-9. Classes  
-10. Modules  
-11. For Of Comprehensions  
-12. Set and Map  
-13. Closure  
-14.
-
-
-## 1.DEFAULT PARAMETER  
-```  
-function greet(name = "Prasad") {
-  console.log("Welcome mr." + name);
-}
-  
-greet("siba"); // It will print Welcome mr. siba
-greet(); // It will print Welcome mr. Prasad 
-```  
-
-
-## 2.Rest and Spread Parameters
-
-### Rest Parameter [ …rest]  
-Rest parameter is an improved way to handle function parameter, allowing us to more easily handle various input   
-as parameters in a function. The rest parameter syntax allows us to represent an indefinite number of arguments as an array.
-  
-```
-function f(arg1, ...rest, arg2) { // arg2 after ...rest ?!
-  // error
-}
-```
-**Rest parameter must be at the end**  
-
-## SPREAD OPERATOR  
-```
-function addFourAges(a,b,c,d){
-    return a+b+c+d;
-}
-
-var sum = addFourAges(12,23,34,45);
-console.log(sum);
-
-
-// ES5
-var ages = [18,19,20,25]
-
-var sum2 = addFourAges.apply(null,ages);
-console.log(sum2);
-
-// ES6
-const sum3 = addFourAges(...ages);
-console.log(sum3)  
-ONE MORE EXAMPLE
-const familySiba = ['Siba','Prasad','Mohanty'];
-const familySatya = ['Satya','Narayan','Mohanty'];
-
-const bigFamily = [...familySiba, ...familySatya];
-```  
-## 4.Multi-line String
-```
-var html = `
-  <div>
-    <span>Some HTML here</span>
-  </div>
-`;
-```
-## ARROW FUNCTION  
-```
-const x = (x, y) => x * y;
-document.getElementById("demo").innerHTML = x(5, 5); // It will print 25  
-```  
-## Map  
-  
-**Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
-Methods and properties are:**    
-1.new Map() – creates the map.  
-2.map.set(key, value) – stores the value by the key.  
-3.map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.  
-4.map.has(key) – returns true if the key exists, false otherwise.  
-5.map.delete(key) – removes the value by the key.  
-6.map.clear() – removes everything from the map.  
-7.map.size – returns the current element count.  
-```
-let recipeMap = new Map([
-  ['cucumber', 500],
-  ['tomatoes', 350],
-  ['onion',    50]
-]);
-
-// iterate over keys (vegetables)
-for (let vegetable of recipeMap.keys()) {
-  alert(vegetable); // cucumber, tomatoes, onion
-}
-
-// iterate over values (amounts)
-for (let amount of recipeMap.values()) {
-  alert(amount); // 500, 350, 50
-}
-
-// iterate over [key, value] entries
-for (let entry of recipeMap) { // the same as of recipeMap.entries()
-  alert(entry); // cucumber,500 (and so on)
-}
-```  
-## Set  
-  
-**A Set is a special type collection – “set of values” (without keys), where each value may occur only once.**    
-**Its main methods are:**
-  
-1. **new Set(iterable)** – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
-2. **set.add(value)** – adds a value, returns the set itself.    
-3. **set.delete(value)** – removes the value, returns true if value existed at the moment of the call, otherwise false.    
-4. **set.has(value)** – returns true if the value exists in the set, otherwise false.    
-5. **set.clear()** – removes everything from the set.    
-6. **set.size** – is the elements count.    
-**EXAMPLES**  
-```
-let set = new Set();
-
-let john = { name: "John" };
-let pete = { name: "Pete" };
-let mary = { name: "Mary" };
-
-// visits, some users come multiple times
-set.add(john);
-set.add(pete);
-set.add(mary);
-set.add(john);
-set.add(mary);
-
-// set keeps only unique values
-alert( set.size ); // 3
-
-for (let user of set) {
-  alert(user.name); // John (then Pete and Mary)
-}
-```  
-
-```
-// ES5 code
-var
-  a = 1, b = 2, c = 3;
-  obj = {
-    a: a,
-    b: b,
-    c: c
-  };
-
-// obj.a = 1, obj.b = 2, obj.c = 3
-```  
-**Equivelent ES6 Code**  
-```
-// ES6 code
-const
-  a = 1, b = 2, c = 3;
-  obj = {
-    a
-    b
-    c
-  };
-
-// obj.a = 1, obj.b = 2, obj.c = 3
-```  
-**Another Example**  
-```
-// ES6 code
-const lib = (() => {
-
-  function sum(a, b)  { return a + b; }
-  function mult(a, b) { return a * b; }
-
-  return {
-    sum,
-    mult
-  };
-
-}());
-
-console.log( lib.sum(2, 3) );  // 5
-console.log( lib.mult(2, 3) ); // 6
-```  
-  
-**ES5 to ES6**   
-'''
-// ES5 code
-var lib = {
-  sum:  function(a, b) { return a + b; },
-  mult: function(a, b) { return a * b; }
-};
-
-console.log( lib.sum(2, 3) );  // 5
-console.log( lib.mult(2, 3) ); // 6
-```  
-  
-```
-// ES6 code
-const lib = {
-  sum(a, b)  { return a + b; },
-  mult(a, b) { return a * b; }
-};
-
-console.log( lib.sum(2, 3) );  // 5
-console.log( lib.mult(2, 3) ); // 6
-```  
-**More shortcut using Arrow Function**  
-```
-// ES6 code
-const lib = {
-  sum:  (a, b) => a + b,
-  mult: (a, b) => a * b
-};
-
-console.log( lib.sum(2, 3) );  // 5
-console.log( lib.mult(2, 3) ); // 6
-``  
-**FOR MORE DETAILS followthe below Link**  
-https://www.sitepoint.com/es6-enhanced-object-literals/   
-  
-## Closure  
-**https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures**  
-
-```
-function makeAdder(x) {
-  return function(y) {
-    return x + y;
-  };
-}
-
-var add5 = makeAdder(5);
-var add10 = makeAdder(10);
-
-console.log(add5(2));  // 7
-console.log(add10(2)); // 12
-```  
-
-## Promises  
-https://codeburst.io/a-simple-guide-to-es6-promises-d71bacd2e13a0   
-http://ccoenraets.github.io/es6-tutorial/promises/   (PROGRAMS)    
-**Promises are a pattern that greatly simplifies asynchronous programming by making the code look synchronous and   
-avoid problems associated with callbacks.**  
-1. Promises are one of the most exciting additions to JavaScript ES6. For supporting asynchronous programming. Before **promise**  
-javascipt uses callback and its little problmatic to handle the response.  
-2. Promises are a pattern that greatly simplifies asynchronous programming by making the code look synchronous and   
-avoid problems associated with callbacks.  
-  
-**Making Promises**    
-```
-const myPromise = new Promise((resolve, reject) => {
-    if (Math.random() * 100 <= 90) {
-        resolve('Hello, Promises!');
-    }
-    reject(new Error('In 10% of the cases, I fail. Miserably.'));
-});
-```  
-  
-**Using Promises**   
-```
-onst myPromise = new Promise((resolve, reject) => {
-    if (Math.random() * 100 < 90) {
-        console.log('resolving the promise ...');
-        resolve('Hello, Promises!');
-    }
-    reject(new Error('In 10% of the cases, I fail. Miserably.'));
-});
-
-// Two functions 
-const onResolved = (resolvedValue) => console.log(resolvedValue);
-const onRejected = (error) => console.log(error);
-
-myPromise.then(onResolved, onRejected);
-
-// Same as above, written concisely
-myPromise.then((resolvedValue) => {
-    console.log(resolvedValue);
-}, (error) => {
-    console.log(error);
-});
-
-// Output (in 90% of the cases)
-
-// resolving the promise ...
-// Hello, Promises!
-// Hello, Promises!
-```  
-**Catching Promises**  
-```
-const myProimse = new Promise((resolve, reject) => {
-  if (Math.random() * 100 < 90) {
-    reject(new Error('The promise was rejected by using reject function.'));
-  }
-  throw new Error('The promise was rejected by throwing an error');
-});
-
-myProimse.then(
-  () => console.log('resolved'), 
-  (error) => console.log(error.message)
-);
-```  
-# JS6
-we can re-declare a variable in javascript.
-var is used as whole javascript file where it declated. That means, we can access a var from anywhere in the javascript file where it declared.  
-But let have only block scope. If we define a variable using let, we can not access it outside that function.  
-const is same as let but the value can not be changed in javasctipt6.  
-  
-var counter = 123;
-var counter = 123;
-it will works fine.  
-let name = 'siba';
-let name = 'satya'; // it will show error,SyntaxError: redeclaration of var name  
-  
- // the below code is in javascript 5  
-``` 
-    function getBook(title,auther){
-        return {
-        'title':title,
-        'author': auther
-        }
-    }  
-
-    var book = getBook('Heripoter','hk');
-    console.log(book);
-```   
-
-**now we will convert this above code to js6 format. 
-  the below code is in javascript 5** 
-    
-    
-```      
-    function getBook6(title,auther){
-        return {
-        title,
-        auther
-        }
-    }  
-
-    var book6 = getBook6('Heripoter','hk');
-    console.log(book6);
-```  
-  
-**Defined function in javascript 6 and js5**  
-```  
-    function printName(){
-      console.log('`MY name is Siba');
-    }
-    or
-    var nameFun = function(){
-      console.log('`MY name is Siba');
-    }
-    printName()
-    nameFun();
-```  
-**In javascript we can do this using ARROW function**  
-``` 
-    const myNameinJs6 = () =>{
-      console.log('`MY name is Siba');
-    }
-    myNameinJs6();  
-    // with Parameter
-    const myLocation = (name,location) =>{
-      console.log('MY name is ${name} and my location is ${location}');
-    }
-    // if there is only one parameter you can skip the brackets
-     const myLocation = name =>{
-      console.log('MY name is ${name}');
-    }  
-   
-   
-   const myLocation = () =>console.log('MY location is INDIA');
-   myLocation();
-
-    const myLocation1 = loc =>console.log('MY second location is '+loc);
-    myLocation1('Mumbai');
-``` 
- **USE OF FUNCTION in JS5 and JS6**  
- ```  
-    var user = {
-        fName:'Siba',
-        lName:'Mohanty',
-        showName  = function(){
-            console.log('My name is '+fName);
-
-            var that = this;
-            var fullName = function() {
-                console.log('My full name is '+that.fName+' '+that.lName);
+# JavaScript DataStructure   
+## List of Important Datastructure in Javascript
+- Array
+  - JavaScript arrays are used to store multiple values in a single variable.
+  - Array can contain different datatype values like String, numbers, floating
+  ```
+      var house = ["1BHK", 25000, "2BHK", 50000, "Rent", true];  
+  ```
+  - Array can contains list of Javascript objects
+  ```
+      var arr1 = ["satya","satya"];
+      var arr2 = new Array("satya","satya");
+      var arr3 = ['satya','satya']; 
+  ```
+  - We can add custom objects to Javascript Array
+  ```
+     class Person{
+            constructor(name,age,address){
+                this.name = name;
+                this.age = age;
+                this.address = address;
             }
-            fullName();
+        }
+
+      var personArray = new Array();
+      personArray.push(new Person('Satya',33,"Odisha"));  
+  ```
+  - Javascript Array Methods
+    - **toString()** - to convert the array object to to string. it will print like this([object Object],[object Object]]
+    - **join()** - it will also convert the array to string, but it have more functionality
+    ```
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo").innerHTML = fruits.join(" * ");
+      o/p = "Banana * Orange * Apple * Mango"
+    ```
+    - **split()** - is used to convert a string to array
+    ```
+        var name = "Siba prasad Mohanty";
+        var arr = name.split(' ');  // it will split the string by space
+        // output = ['siba','prasad','MOhanty']
+    ```
+    - **pop()** -  method removes the last element from an array
+    - **push()** - method push one item to the  end of the array.
+    - **shift()** - method removes the first array element and "shifts" all other elements to a lower index.
+    ```
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.shift();            // Removes the first element "Banana" from fruits
+    ```
+    - The shift() method returns the string that was "shifted out".
+    - **unshift()** method adds a new element to an array (at the beginning), and "unshifts" older elements
+    - ```
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+        output = ["Lemon","Banana", "Orange", "Apple", "Mango"]
+      ```
+    - The unshift() method returns the new array length.
+    - **delete()** Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete
+    - ```
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        delete fruits[0];           // Changes the first element in fruits to undefined
+        O/P = [undefined,"Orange", "Apple", "Mango"];
+      ```  
+    - **splice()** - The splice() method can be used to add new items to an array
+    - ```
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(2, 0, "Lemon", "Kiwi");
+        O/P = [Banana,Orange,Lemon,Kiwi,Apple,Mango];
+      ```
+    - splice() - used to remove array element.
+    - ```
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(0, 1);        // Removes the first element of fruits
+      ```     
+    - **concat()** - It is used to merge 2 arrays.
+    - ```
+        var myGirls = ["Cecilie", "Lone"];
+        var myBoys = ["Emil", "Tobias", "Linus"];
+        var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys
+      ```  
+    - Concat 3 arrays
+    - ```
+        var resArray = arr1.concat(arr2,arr3);
+      ```  
+    - **slice()** method slices out a piece of an array into a new array  
+    - ```
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        var citrus = fruits.slice(1);
+        O/P = Orange,Lemon,Apple,Mango
+        var fr1 = fruits.slice(3); // it will remove first 3 elements
+      ```
+    - **slice()** method can take two arguments like slice(1, 3).
+    - The method then selects elements from the start argument, and up to (but not including) the end argument.  
+    - ```
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        var citrus = fruits.slice(1, 3);
+        O/P = Orange,Lemon
+      ``` 
+## Sorting of Array
+- **sort()** - it will sort the elements 
+- **reverse()** - it will reverse the elements
+- another sorting logic
+- ```
+  var points = [40, 100, 1, 5, 25, 10];
+  points.sort(function(a, b){return a - b});
+  ```
+- To sort from higher to lower just use b-a in above function
+- If the result is negative a is sorted before b.
+- If the result is positive b is sorted before a.
+- If the result is 0 no changes are done with the sort order of the two values.  
+  
+- **return Math.max.apply(null, arr);** - used to find the max number in array.
+- **return Math.min.apply(null, arr);** - Used to find the min numver in array. 
+## sorting custom array object
+- ```var cars = [
+      {type:"Volvo", year:2016},
+      {type:"Saab", year:2001},
+      {type:"BMW", year:2010}
+  ];
+  ```
+- cars.sort(function(a, b){return a.year - b.year}); - use this function to sort cars by manufacturing year
+  
+## ARRAY iteration
+- forEach
+    - ```
+        arr.forEach(element =>{
+            // do the operatin you want
+        });
+      ```
+    -  ```
+        arr.forEach((element,index) =>{
+          // do the operation here
+        });
+      ```
+- for loop
+  - using in
+    ```
+        for(let i in array){
+          // here i is the index of each item
+        }
+    ```  
+  - using of
+    ```
+        for(let item of array){
+          // here item is the each item of array
+        }
+    ```  
+- **Array.map()**
+    - map() method creates a new array by performing a function on each array element
+    - map() method does not execute the function for array elements without values.
+    - map() method does not change the original array
+    - ```
+          var numbers1 = [45, 4, 9, 16, 25];
+          var numbers2 = numbers1.map(myFunction);
+
+          function myFunction(value, index, array) {
+            return value * 2;
+          }
+      ```
+- **Array.filter()**
+    - The filter() method creates a new array with array elements that passes a test 
+    - ```
+          var numbers = [45, 4, 9, 16, 25];
+          var over18 = numbers.filter(myFunction);
+          
+          function myFunction(value, index, array) {
+            return value > 18;
+          }
+      ```
+- **Array.reduce()**
+  - The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+  - The reduce() method works from left-to-right in the array. See also reduceRight().
+  - The reduce() method does not reduce the original array.
+  - ```
+      var numbers1 = [10, 10, 10, 10, 10];
+      var sum = numbers1.reduce(myFunction);
+
+      function myFunction(total, value, index, array) {
+        return total + value;
+      }
+      now sum = 50;
+    ```
+- **Array.every()**
+  - The every() method check if all array values pass a test.
+  - It return true or false
+  - ```
+      var numbers = [45, 4, 9, 16, 25];
+      var allOver18 = numbers.every(myFunction);
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+    ```
+- **Array.some()**
+  - The some() method check if some array values pass a test.   
+- **indexOf()**
+- **lastIndexOf()** - 
+- **Array.find()**
+  - The find() method returns the value of the first array element that passes a test function.
+  - ```
+      var numbers = [4, 9, 16, 25, 29];
+      var first = numbers.find(myFunction);
+
+      function myFunction(value, index, array) {
+        return value > 18;
+      }
+    ```  
+- **Array.findIndex()**
+  
+## JSON
+- JSON data types
+  - a string
+  - a number
+  - an object (JSON object)
+  - an array
+  - a boolean
+  - null
+- **JSON.parse()** - it convert the JSON string to json Object.
+- **JSON.stringify()** - Use the JavaScript function JSON.stringify() to convert it into a string.
+  - You can stringify an array also
+  - ```
+      var arr = [ "John", "Peter", "Sally", "Jane" ]
+      var myJSON = JSON.stringify(arr);
+    ```    
+- **How to Iterate JSON object in Javascript**
+  - ```
+      var p = {
+      "p1": "value1",
+      "p2": "value2",
+      "p3": "value3"
+    };
+
+    for (var key in p) {
+        if (p.hasOwnProperty(key)) {
+            console.log(key + " -> " + p[key]);
         }
     }
-    user,showName();
-```      
-**NOTE - in the above code we declared function inside another function. To access the variable fName and lName, we used that. Because if we use this.fname ther, it will be undefined**.  
+    ```
+  - Another way
+    ```
+      for (const key of Object.keys(obj)) {
+          console.log(key, obj[key]);
+      }
+    ```
+
+Global Code — arrayWithCustomObject.html:28)
+
+- Set
+  - A set is a collection of items which are unique i.e no element can be repeated. 
+  - Set in ES6 are ordered: elements of the set can be iterated in the insertion order. 
+  - Set can store any types of values whether primitive or objects.
+  - **How To initialize Set**
+    - ```
+        var set1 = new Set(["sumit","sumit","amit","anil","anish"]); 
   
-**Lets explain how we will define in JS6**  
- ```  
-    var user1 = {
-        fName:'Siba',
-        lName:'Mohanty',
-        showName  = function(){
-            console.log('My name is '+fName); 
-            var fullName = () =>  console.log('My full name is '+this.fName+' '+this.lName);
-            fullName();
+        // it contains 'f', 'o', 'd' 
+        var set2 = new Set("fooooooood"); 
+          
+        // it contains [10, 20, 30, 40] 
+        var set3 = new Set([10, 20, 30, 30, 40, 40]); 
+          
+        // it is an  empty set 
+        var set4 = new Set(); 
+      ```  
+  - **METHODS**
+    - **add()** - It adds the new element with a specified value at the end of the Set object.
+    - **delete()** - It deletes an element with the specified value from the Set object.
+    - **clear()** - It removes all the element from the set.
+    - **size()** - 
+    - **entries()** - It returns an iterator object which contains an array having the entries of the set, in the insertion order.
+    - **has()** - It returns true if the specified value is present in the Set object.
+    - **values()** - It returns all the values from the Set in the same insertion order.
+    - **keys()** – It also returns all the values from the Set in the insertion order.
+    - **forEach()** – It executes the given function once for every element in the Set, in the insertion order.
+    - 
+- **Map**
+  - The Map object holds key-value pairs and remembers the original insertion order of the keys. 
+  - Any value (both objects and primitive values) may be used as either a key or a value.
+  - **clear()** - 
+  - **delete()** -
+  - **entries()** -
+  - **get()** -
+  - **has()** -
+  - **keys()** -
+  - **values()** -
+  - **set()** - 
+  - ```
+      let myMap = new Map();
+      myMap.set(keyString, "value associated with 'a string'")
+      myMap.set(keyObj, 'value associated with keyObj')
+      myMap.set(keyFunc, 'value associated with keyFunc')
+
+    ```  
+  - Iteration
+    ```
+      for (let key of myMap.keys()) {
+        console.log(key)
+      }
+    ```  
+
+   ```
+      for (let value of myMap.values()) {
+        console.log(value)
+      }
+    ```
+
+    ```
+      for (let [key, value] of myMap.entries()) {
+        console.log(key + ' = ' + value)
+      }
+    ```   
+- Stack
+  - Push → Add an element to the stack.
+  - Pop → Delete an element from the stack.
+  - Peek → Get the top element of the stack.
+  - Length → Return the length of the stack.
+  - Search → Search for the element in the stack.
+  - IsEmpty → Check if the stack is empty.
+  - Print → Print the elements of the stack.
+  - ```
+        class Stack {
+            constructor(){
+                this.data = [];
+                this.top = 0;
+            }
         }
-    }
-    user1,showName();
-```      
-**Use of FOREACH, MAP and FILTER**  
- ``` 
- const shoppingList = ['Milk','Cow','Eggs','Bananas','Choco']
-
-forEach
- 
-     shoppingList.forEach( element =>{
-      // write your operation here
-     });
-
-     shoppingList.forEach( (element,index) =>{
-      // write your operation here
-     });  
- 
- Use of Map. 
- 
-     const newList = shoppingList.map(item => item +" new");
-     
- Use of filter  
- 
-     const newList = shoppingList.filter(item =>{
-      return item === 'Eggs';
-     })
- ``` 
-   
- **CLASSES AND OBJECTS**  
- 
- ``` 
-   function Person(name,age,haircolor){
-     this.name = name;
-     this.age = age;
-     this.haircolor = haircolor;
-     showName(){
-        console.log('My name is '+this.name);
-     }
-   }
- 
-   Person.prototype.sayName = function(){
-      console.log('My name is '+this.name);
-   };
- 
-   var sp = new Person('siba','23','black');
-   sp.showName();
-   sp.sayName();
- 
-   function Siba(occupation,hobby,name,age,haircolor){
-       Person.call(this,name,age,haircolor)
-       this.occupation = occupation;
-       this.hobby = hobby;
-   }
-  
-  How to use all the function of Person inside Siba class.  
-  Siba.prototype = Object.create(Person.prototype);  
-  ``` 
-  
- **Above is using JS5, now lets use JS6 for**  
-``` 
- class  ShoppingList{
-    constructor(items,price){
-      this.items = items;
-      this.price = price;
-    }
-    sayList(){
-      console.log(this.items);
-    }
- }
- 
- const myList = new SHoppingList(['milk','rice','egg']);  
-   
- class Product extends ShoppingList{
-    constructor(items,price,amount,cost){
-        super(items,proice);
-        this.amount = amount;
-        this.cost = cost;
-    }
- }  
-``` 
-**PROMISE,ASYNC,CALLBACK**  
-// es5.  
-``` 
-console.log('start');
-  
-  function getData(data,callback){
-    setTimeout( () =>{
-        console.log('Reading from database');
-        calback({data: data});
-    },2000);
-  }
-  
-  getData(5,function(data)){
-    console.log(data);
-  });
-  
-  console.log('finish');
- ```  
-**Now using ES6**  
- ``` 
-  const prom = new Promise( (resolve, reject) =>{
-      setTimeout( () =>{
-        console.log('Reading from database');
-        resolve(200);
-    },2000);
-  }  
-  
-  prom.then(data =>{
-    console.log(data);
-  })
-  .catch(err => console.log(err));
- ```   
- 
+    ```
+  - data → Is an array in which we store the value.
+  - top → Points to the top element index.

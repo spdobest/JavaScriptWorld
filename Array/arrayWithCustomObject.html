@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Array Custom Object</title>
+</head>
+<body>
+    <h1><b><u>ARRAY of Custom Object</u></b></h1>
+    <script language="javascript"> 
+         
+
+
+        class Person{
+            constructor(name,age,address){
+                this.name = name;
+                this.age = age;
+                this.address = address;
+            }
+        }
+
+
+         var personArray = new Array();
+         personArray.push(new Person('Satya',33,"Odisha"));   
+         personArray.push(new Person('siba',31,"Odisha"));
+         personArray.push(new Person('abcads',23,"Odisha"));
+
+         console.log(personArray.toString());
+
+         for(person of personArray){
+             console.log("person details \n Name = "+person.name+"\n age =  "+person.age);
+         }
+
+    </script>
+</body>
+</html>
