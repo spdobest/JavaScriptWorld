@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>MAP</title>
+</head>
+<body>
+    <h1>Use of MAP</h1>
+
+    <h3>Var is Function Scope and let, const are block scope </h3>
+<script> 
+
+const questions = new Map();
+questions.set('question','what is the latest jvascript version');
+questions.set(1,'ES5');
+questions.set(2,'ES6');
+questions.set(3,'ES7');
+questions.set(4,'ES8');
+questions.set('correct',3);
+questions.set(true,'Correct Answer: D');
+questions.set(false,'Wrong, Please Try Again!!');
+
+console.log(questions.get('question'));
+console.log(questions.size);
+
+if(questions.has(4)){
+questions.delete(4);
+}
+
+// questions.clear();
+
+questions.forEach((value,key) =>{
+
+console.log('This is '+key+' and its set to '+value);
+
+
+});
+
+const ans = parseInt(prompt('Write the correct answer'));
+
+console.log(questions.get(ans === questions.get('correct')));
+
+ 
+    </script>
+    </body>
+</html>

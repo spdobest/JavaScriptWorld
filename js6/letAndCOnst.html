@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Let and Const</title>
+</head>
+<body>
+    <h1>Use of let and Const</h1>
+
+    <h3>Var is Function Scope and let, const are block scope </h3>
+<script>
+
+var name = "siba";
+var age = 30;
+name = "Sibaprasad"
+
+console.log(name)
+
+// ES6
+const name6 = "Sibaprasad Mohanty";  // it cant be change , so we use const
+let age6 = 31;// it can be change so we use constr
+
+console.log(name6+" Age "+age6);
+
+
+
+    console.log("Welcome to JavaScrift");
+    var a = 12;
+    var b = 13;
+    var sum = a+b;
+    console.log("sum of a and b is "+sum)
+
+    function driverlicence5(passedTest){
+
+        var name = "Siba";
+var age = 31;
+
+if(passedTest){
+
+
+
+console.log(name+" is "+age+" years age")
+
+}
+
+    }
+
+    driverlicence5(true)
+
+    function driverlicence6(passedTest){
+
+//const name = "Siba";
+// let age = 31;
+
+if(passedTest){
+
+const name = "Siba";
+let age = 31;
+
+console.log(name+" is "+age+" years age")
+// if we use let and const inside this block, it will not work
+}
+
+    }
+
+    driverlicence6(true)
+
+    // here is another example
+
+    var i = 23;
+    for(let i = 1;i<5;i++){
+        console.log(i);
+    }
+    console.log(i);
+
+    console.log('===============JS6 and JS5 comparison===');
+    // the below code is in javascript 5 
+    function getBook(title,auther){
+        return {
+        'title':title,
+        'author': auther
+        }
+    }  
+
+    var book = getBook('Heripoter','hk');
+    console.log(book);
+    // now we will convert this above code to js6 format
+    // the below code is in javascript 5 
+    function getBook6(title,auther){
+        return {
+        title,
+        auther
+        }
+    }  
+
+    var book6 = getBook6('Heripoter','hk');
+    console.log(book6);
+
+    const myLocation = () =>console.log('MY location is INDIA');
+    myLocation();
+
+    const myLocation1 = loc =>console.log('MY second location is '+loc);
+    myLocation1('Mumbai');
+    console.log('====== USE OF FUNCTION =======');
+    var user = {
+        fName:'Siba',
+        lName:'Mohanty',
+        showName  = function(){
+            console.log('My name is '+fName);
+
+            var that = this;
+            var fullName = function() {
+                console.log('My full name is '+that.fName+' '+lName);
+            }
+            fullName();
+        }
+    }
+    user,showName();
+    </script>
+    </body>
+</html>

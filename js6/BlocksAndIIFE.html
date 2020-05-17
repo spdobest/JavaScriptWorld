@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>Blocks and IIFES</title>
+</head>
+<body>
+    <h1>Use Block and IIFES</h1>
+
+    <h2>IIFE - Immediately-Invoked Function Expression</h2><br>
+    <h3>An IIFE function runs itself immediately, and it creates a scope where nothing is going to leak into the parent scope. In our case, nothing is going to leak into the global scope of the window.</h3>><br>
+    <h3>The way the IIFE fixes that is that the function runs immediately and you put your variables inside of that:
+        JavaScript <br>
+        (function() { <br>
+        var name = 'wes';<br>
+        })();</h3><br>
+    <h3>An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. </h3><br><br>
+    <h3>An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. </h3><br><br>
+<script> 
+
+(function() {
+  var foo = "bar";
+  console.log(foo);
+})();
+
+// console.log(foo); // // ReferenceError: foo is not defined
+
+// to solve the above problem we can use block scope here
+// this is nothing but block in javascript
+{
+  let foo = "bar";
+  console.log(foo);
+  const a = 12;
+  let b = 23;
+}
+
+// console.log(a+B) // it will show error
+var abc = "Sibaprasad";
+console.log('My name is ${abc}')
+
+// here is the example of closure
+const uniqueId = (function() {
+  let count = 0;
+  return function() {
+    ++count;
+    return `id_${count}`;
+  };
+})();
+
+console.log(uniqueId()); // "id_1"
+console.log(uniqueId()); // "id_2"
+console.log(uniqueId()); // "id_3"
+
+// another example of closure
+const counter = (function() {
+  let counterValue = 0;
+
+  return {
+    increment() {
+      ++counterValue;
+    },
+
+    get value() {
+      return counterValue;
+    }
+  };
+})();
+
+counter.increment();
+console.log(counter.value); // 1
+
+counter.increment();
+counter.increment();
+console.log(counter.value); // 3
+
+
+    </script>
+    </body>
+</html>
